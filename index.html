@@ -3,147 +3,519 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Il mio sito personale</title>
+  <title>Nippon Wings · Allevamento Passero del Giappone</title>
   <style>
+    :root {
+      --bg: #f5f5f0;
+      --bg-card: #ffffff;
+      --accent: #b91c1c;
+      --accent-soft: #fee2e2;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
-      background: #f5f5f5;
-      color: #222;
+      background: radial-gradient(circle at top, #fef9c3 0, #f5f5f0 40%, #e5e7eb 100%);
+      color: var(--text);
     }
+
     header {
-      background: #1f2933;
+      background: linear-gradient(135deg, #111827, #1f2937);
       color: #fff;
-      padding: 40px 20px;
+      padding: 40px 20px 30px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
+
+    /* Piccoli uccellini stilizzati di sfondo */
+    header::before,
+    header::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 2px solid rgba(248, 250, 252, 0.2);
+      top: -60px;
+      opacity: 0.7;
+    }
+
+    header::before {
+      right: -40px;
+    }
+
+    header::after {
+      left: -80px;
+      top: 40px;
+    }
+
+    .logo-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid #fef3c7;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-circle span {
+      font-size: 32px;
+    }
+
     header h1 {
-      margin: 0 0 10px;
-      font-size: 2rem;
+      margin: 0 0 8px;
+      font-size: 2.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
     }
+
     header p {
       margin: 0;
       opacity: 0.9;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
     }
+
+    .subline {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
     nav {
-      background: #111827;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
       padding: 10px 20px;
       text-align: center;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
     }
+
     nav a {
       color: #e5e7eb;
       text-decoration: none;
       margin: 0 10px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 16px 40px;
+      max-width: 1000px;
+      margin: 20px auto 40px;
+      padding: 0 16px;
     }
+
     section {
-      background: #fff;
+      background: var(--bg-card);
       padding: 20px;
       margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      position: relative;
+      overflow: hidden;
     }
+
+    section::before {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(248, 250, 252, 0.8), transparent);
+      opacity: 0.7;
+      top: -40px;
+      right: -40px;
+    }
+
     section h2 {
       margin-top: 0;
-      border-bottom: 1px solid #e5e7eb;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid var(--border);
       padding-bottom: 8px;
+    }
+
+    section h2 .emoji {
       font-size: 1.3rem;
     }
-    .post {
-      margin-bottom: 20px;
+
+    p {
+      line-height: 1.6;
+      margin: 0.3rem 0 0.6rem;
     }
-    .post h3 {
-      margin-bottom: 4px;
-      font-size: 1.1rem;
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.9rem;
     }
-    .post .date {
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid #fecaca;
+      background: var(--accent-soft);
+      padding: 4px 10px;
       font-size: 0.8rem;
-      color: #6b7280;
-      margin-bottom: 8px;
+      color: #7f1d1d;
     }
+
+    .columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .card-soft {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 10px 12px;
+      border: 1px dashed #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .list-clean {
+      padding-left: 1.1rem;
+      margin: 0.3rem 0 0.2rem;
+    }
+
+    .list-clean li {
+      margin-bottom: 4px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .gallery-item {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid #e5e7eb;
+      font-size: 0.85rem;
+    }
+
+    .gallery-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    .cta-box {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      font-size: 0.9rem;
+    }
+
+    .cta-box strong {
+      color: #b91c1c;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .contact-item {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 10px 12px;
+      border: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .note-small {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      color: #6b7280;
+      padding: 16px 12px 26px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 28px 14px 22px;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav a {
+        margin: 0 6px;
+        font-size: 0.75rem;
+      }
+      .columns {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Il mio sito personale</h1>
-    <p>Un piccolo spazio online per i miei progetti, idee e passioni.</p>
+    <div class="logo-circle">
+      <!-- piccolo simbolo “passero stilizzato” -->
+      <span>🐦</span>
+    </div>
+    <h1>Nippon Wings</h1>
+    <p>Allevamento amatoriale di Passero del Giappone e Lonchura striata domestica</p>
+    <div class="subline">Tradizione ornitologica · Cura · Selezione</div>
   </header>
 
   <nav>
     <a href="#home">Home</a>
-    <a href="#blog">Blog</a>
-    <a href="#chi-sono">Chi sono</a>
+    <a href="#allevamento">Allevamento</a>
+    <a href="#galleria">Galleria</a>
+    <a href="#nidi">Nidi & Accessori</a>
     <a href="#contatti">Contatti</a>
   </nav>
 
   <div class="container">
+
+    <!-- HOME -->
     <section id="home">
-      <h2>Benvenuto</h2>
+      <h2><span class="emoji">🌸</span> Benvenuti in Nippon Wings</h2>
       <p>
-        Ciao! Questo è il mio sito creato con <strong>GitHub Pages</strong>.
-        Qui raccoglierò pensieri, progetti e tutto ciò che mi appassiona.
+        Nippon Wings è un allevamento amatoriale dedicato in particolare alla
+        <strong>Lonchura striata domestica</strong> (Passero del Giappone) e ad altri uccelli esotici.
+        L’ispirazione nasce dall’eleganza minimalista giapponese unita alla cura per il benessere
+        dei soggetti e alla selezione mirata per linee sane e omogenee.
       </p>
-    </section>
+      <p class="muted">
+        In queste pagine trovi informazioni sull’allevamento, qualche scatto dei soggetti,
+        e una sezione dedicata ai <strong>nidi artigianali</strong> pensati per l’ornicoltura.
+      </p>
 
-    <section id="blog">
-      <h2>Articoli recenti</h2>
-
-      <div class="post">
-        <h3>Il mio primo articolo</h3>
-        <div class="date">14 novembre 2025</div>
-        <p>
-          Questo è il primo post del mio nuovo sito. Ho deciso di iniziare
-          a scrivere qui per mettere in ordine idee, progetti e obiettivi.
-        </p>
-      </div>
-
-      <div class="post">
-        <h3>Perché ho creato questo sito</h3>
-        <div class="date">14 novembre 2025</div>
-        <p>
-          Volevo uno spazio semplice, senza social, dove poter essere me stesso
-          e raccontare quello che faccio. GitHub mi permette di farlo gratis,
-          con un indirizzo facile da ricordare.
-        </p>
+      <div class="pill-row">
+        <div class="pill">Lonchura striata domestica</div>
+        <div class="pill">Passero del Giappone</div>
+        <div class="pill">Allevamento amatoriale</div>
+        <div class="pill">Selezione e cura</div>
       </div>
     </section>
 
-    <section id="chi-sono">
-      <h2>Chi sono</h2>
-      <p>
-        Qui puoi scrivere una breve descrizione su di te: chi sei, cosa fai,
-        quali sono le tue passioni e perché hai aperto questo sito.
-      </p>
+    <!-- ALLEVAMENTO -->
+    <section id="allevamento">
+      <h2><span class="emoji">🐦</span> L’allevamento</h2>
+
+      <div class="columns">
+        <div>
+          <p>
+            L’obiettivo di Nippon Wings è un allevamento ordinato, funzionale e sereno, dove
+            ogni soggetto possa esprimere al meglio il proprio potenziale. Le linee di selezione
+            sono orientate a:
+          </p>
+          <ul class="list-clean">
+            <li>buona fertilità e capacità di allevare la prole;</li>
+            <li>morfologia equilibrata e armoniosa;</li>
+            <li>piumaggio curato e condizioni generali di salute ottimali;</li>
+            <li>temperamento tranquillo e gestibile in allevamento.</li>
+          </ul>
+          <p class="muted">
+            Particolare attenzione viene data all’igiene delle gabbie, alla ventilazione,
+            all’illuminazione artificiale regolata e a una corretta integrazione alimentare.
+          </p>
+        </div>
+
+        <div class="card-soft">
+          <strong>Linee principali in allevamento:</strong>
+          <ul class="list-clean">
+            <li>Lonchura striata domestica – linee da mostra / selezione tipo standard;</li>
+            <li>Eventuali altri esotici di accompagnamento (se presenti in quel periodo);</li>
+            <li>Progetti mirati a migliorare uniformità e qualità della prole anno dopo anno.</li>
+          </ul>
+          <div class="note-small">
+            Nota: questo sito ha carattere puramente informativo e descrittivo dell’allevamento.
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- GALLERIA -->
+    <section id="galleria">
+      <h2><span class="emoji">📷</span> Galleria (work in progress)</h2>
+      <p>
+        Qui puoi inserire in futuro alcune foto dei tuoi soggetti e delle gabbie.
+        Per ora trovi dei riquadri descrittivi che puoi sostituire con immagini reali.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <strong>Lonchura striata domestica – coppia in riproduzione</strong>
+          <p>
+            Soggetti in perfetta forma, sistemati in gabbia da riproduzione, con nido in legno
+            frontale/ispezionabile.
+          </p>
+          <span class="tag">Soggetti</span>
+        </div>
+
+        <div class="gallery-item">
+          <strong>Setup gabbia da cova</strong>
+          <p>
+            Esempio di allestimento: posatoi, mangiatoie, beverini, nido, eventuali piante
+            decorative artificiali per maggiore tranquillità.
+          </p>
+          <span class="tag">Allestimento</span>
+        </div>
+
+        <div class="gallery-item">
+          <strong>Giovani soggetti svezzati</strong>
+          <p>
+            Gruppo di novelli su posatoio, utile per valutare uniformità di taglia, piumaggio
+            e portamento.
+          </p>
+          <span class="tag">Novelli</span>
+        </div>
+
+        <div class="gallery-item">
+          <strong>Dettaglio nido artigianale</strong>
+          <p>
+            Nido in compensato marino, con sportellino d’ispezione e aggancio per gabbia
+            zincata.
+          </p>
+          <span class="tag">Nidi artigianali</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- NIDI & ACCESSORI -->
+    <section id="nidi">
+      <h2><span class="emoji">🪺</span> Nidi & Accessori artigianali</h2>
+
+      <p>
+        Oltre all’allevamento, Nippon Wings sviluppa e testa <strong>nidi in legno artigianali</strong>,
+        pensati per uccelli esotici e in particolare per la Lonchura striata domestica.
+      </p>
+
+      <div class="columns">
+        <div>
+          <ul class="list-clean">
+            <li>Compensato marino di adeguato spessore (es. 10&nbsp;mm);</li>
+            <li>Dimensioni studiate su misura per esotici;</li>
+            <li>Sportellino superiore per ispezione e controllo cova;</li>
+            <li>Sistemi di aggancio per gabbie zincate da allevamento;</li>
+            <li>Progettati per essere facili da pulire e igienizzare.</li>
+          </ul>
+          <p class="muted">
+            Ogni modello viene testato in allevamento per verificare praticità, gradimento dei
+            soggetti e sicurezza della prole.
+          </p>
+        </div>
+
+        <div class="cta-box">
+          <strong>Idea utilizzo del sito:</strong><br />
+          puoi usare questa sezione per:
+          <ul class="list-clean">
+            <li>descrivere i diversi modelli di nido;</li>
+            <li>indicare misure, materiali e varianti;</li>
+            <li>spiegare come contattarti per informazioni o disponibilità;</li>
+            <li>linkare in futuro eventuali annunci (es. Subito.it) o shop esterni.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
     <section id="contatti">
-      <h2>Contatti</h2>
+      <h2><span class="emoji">📨</span> Contatti</h2>
       <p>
-        Se vuoi metterti in contatto con me, puoi scrivere a:
-        <strong>tua-email@example.com</strong>
+        Per informazioni sull’allevamento, scambio di idee tra allevatori o richieste
+        relative ai nidi artigianali, puoi utilizzare i recapiti qui sotto.
       </p>
+
+      <div class="contact-row">
+        <div class="contact-item">
+          <strong>Email</strong>
+          <p>
+            Inserisci qui la tua email, ad esempio:<br />
+            <code>nipponwings.allevamento@example.com</code>
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <strong>Social / Profilo</strong>
+          <p>
+            Puoi inserire il link alla tua pagina Instagram del tuo allevamento, ad esempio:<br />
+            <code>instagram.com/nippon_wings_aviary</code>
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <strong>Zona</strong>
+          <p>
+            Inserisci la tua provincia/area (es. Udine, Friuli Venezia Giulia) per facilitare i contatti
+            con altri allevatori della zona.
+          </p>
+        </div>
+      </div>
+
+      <div class="note-small">
+        Per privacy, valuta quali dati inserire pubblicamente (solo ciò che vuoi rendere visibile).
+      </div>
     </section>
   </div>
 
   <footer>
-    © 2025 · Il mio sito personale · Creato con GitHub Pages
+    © 2025 · Nippon Wings · Allevamento amatoriale di Passero del Giappone e Lonchura striata domestica ·
+    Sito statico creato con GitHub Pages
   </footer>
 </body>
 </html>
+
