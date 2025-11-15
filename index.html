@@ -35,7 +35,6 @@
       overflow: hidden;
     }
 
-    /* Piccoli uccellini stilizzati di sfondo */
     header::before,
     header::after {
       content: "";
@@ -57,23 +56,14 @@
       top: 40px;
     }
 
-    .logo-circle {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 2px solid #fef3c7;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    /* LOGO */
+    .logo-img {
+      width: 120px;
+      height: auto;
       margin-bottom: 12px;
       position: relative;
       z-index: 1;
-    }
-
-    <div class="logo-circle">
-  <img src="logo.png" alt="Nippon Wings Logo" style="width:60px; height:60px;" />
-</div>
-
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
 
     header h1 {
@@ -312,12 +302,12 @@
 </head>
 <body>
   <header>
-    <div class="logo-circle">
-      <!-- piccolo simbolo “passero stilizzato” -->
-      <span>🐦</span>
-    </div>
+
+    <!-- LOGO INSERITO QUI -->
+    <img src="logo.png" alt="Logo Nippon Wings" class="logo-img" />
+
     <h1>Nippon Wings</h1>
-    <p>Allevamento amatoriale di Passero del Giappone</p>
+    <p>Allevamento amatoriale di Passero del Giappone e Lonchura striata domestica</p>
     <div class="subline">Tradizione ornitologica · Cura · Selezione</div>
   </header>
 
@@ -336,7 +326,7 @@
       <h2><span class="emoji">🌸</span> Benvenuti in Nippon Wings</h2>
       <p>
         Nippon Wings è un allevamento amatoriale dedicato in particolare alla
-        <strong>Lonchura striata domestica</strong> (Passero del Giappone).
+        <strong>Lonchura striata domestica</strong> (Passero del Giappone) e ad altri uccelli esotici.
         L’ispirazione nasce dall’eleganza minimalista giapponese unita alla cura per il benessere
         dei soggetti e alla selezione mirata per linee sane e omogenee.
       </p>
@@ -383,9 +373,6 @@
             <li>Eventuali altri esotici di accompagnamento (se presenti in quel periodo);</li>
             <li>Progetti mirati a migliorare uniformità e qualità della prole anno dopo anno.</li>
           </ul>
-          <div class="note-small">
-            Nota: questo sito ha carattere puramente informativo e descrittivo dell’allevamento.
-          </div>
         </div>
       </div>
     </section>
@@ -394,81 +381,64 @@
     <section id="galleria">
       <h2><span class="emoji">📷</span> Galleria (work in progress)</h2>
       <p>
-        Qui puoi inserire in futuro alcune foto dei tuoi soggetti e delle gabbie.
-        Per ora trovi dei riquadri descrittivi che puoi sostituire con immagini reali.
+        Qui puoi inserire alcune foto dei tuoi soggetti e delle gabbie.  
+        Puoi caricare le immagini nel repository GitHub e richiamarle come file locali.
       </p>
 
       <div class="gallery-grid">
         <div class="gallery-item">
-          <strong>Lonchura striata domestica – coppia in riproduzione</strong>
-          <p>
-            Soggetti in perfetta forma, sistemati in gabbia da riproduzione, con nido in legno
-            frontale/ispezionabile.
-          </p>
+          <strong>Coppia di Lonchura</strong>
+          <p>Soggetti in perfetta forma in gabbia da cova.</p>
           <span class="tag">Soggetti</span>
         </div>
 
         <div class="gallery-item">
-          <strong>Setup gabbia da cova</strong>
-          <p>
-            Esempio di allestimento: posatoi, mangiatoie, beverini, nido, eventuali piante
-            decorative artificiali per maggiore tranquillità.
-          </p>
+          <strong>Setup gabbia</strong>
+          <p>Allestimento semplice e funzionale.</p>
           <span class="tag">Allestimento</span>
         </div>
 
         <div class="gallery-item">
-          <strong>Giovani soggetti svezzati</strong>
-          <p>
-            Gruppo di novelli su posatoio, utile per valutare uniformità di taglia, piumaggio
-            e portamento.
-          </p>
+          <strong>Novelli</strong>
+          <p>Giovani svezzati su posatoio.</p>
           <span class="tag">Novelli</span>
         </div>
 
         <div class="gallery-item">
-          <strong>Dettaglio nido artigianale</strong>
-          <p>
-            Nido in compensato marino, con sportellino d’ispezione e aggancio per gabbia
-            zincata.
-          </p>
-          <span class="tag">Nidi artigianali</span>
+          <strong>Nido artigianale</strong>
+          <p>Nido testato in allevamento.</p>
+          <span class="tag">Nidi</span>
         </div>
       </div>
     </section>
 
-    <!-- NIDI & ACCESSORI -->
+    <!-- NIDI -->
     <section id="nidi">
       <h2><span class="emoji">🪺</span> Nidi & Accessori artigianali</h2>
 
       <p>
-        Oltre all’allevamento, Nippon Wings sviluppa e testa <strong>nidi in legno artigianali</strong>,
-        pensati per uccelli esotici e in particolare per la Lonchura striata domestica.
+        Nippon Wings sviluppa e testa <strong>nidi in legno artigianali</strong>,
+        ideali per Lonchure, Passeri del Giappone e altri esotici.
       </p>
 
       <div class="columns">
         <div>
           <ul class="list-clean">
-            <li>Compensato marino di adeguato spessore (es. 10&nbsp;mm);</li>
-            <li>Dimensioni studiate su misura per esotici;</li>
-            <li>Sportellino superiore per ispezione e controllo cova;</li>
-            <li>Sistemi di aggancio per gabbie zincate da allevamento;</li>
-            <li>Progettati per essere facili da pulire e igienizzare.</li>
+            <li>Compensato marino da 10 mm</li>
+            <li>Misure ottimali per esotici</li>
+            <li>Sportellino di ispezione</li>
+            <li>Aggancio per gabbie zincate</li>
+            <li>Facili da pulire e mantenere</li>
           </ul>
-          <p class="muted">
-            Ogni modello viene testato in allevamento per verificare praticità, gradimento dei
-            soggetti e sicurezza della prole.
-          </p>
         </div>
 
         <div class="cta-box">
-          <strong>Idea utilizzo del sito:</strong><br />
-          puoi usare questa sezione per:
+          <strong>Vuoi inserirli in vendita?</strong><br />
+          Posso aggiungere:
           <ul class="list-clean">
-            <li>descrivere i diversi modelli di nido;</li>
-            <li>indicare misure, materiali e varianti;</li>
-            <li>spiegare come contattarti per informazioni o disponibilità;</li>
-            <li>linkare in futuro eventuali annunci (es. Subito.it) o shop esterni.</li>
+            <li>tabella prezzi</li>
+            <li>foto modelli</li>
+            <li>pulsanti per Subito.it</li>
           </ul>
         </div>
       </div>
@@ -477,46 +447,30 @@
     <!-- CONTATTI -->
     <section id="contatti">
       <h2><span class="emoji">📨</span> Contatti</h2>
-      <p>
-        Per informazioni sull’allevamento, scambio di idee tra allevatori o richieste
-        relative ai nidi artigianali, puoi utilizzare i recapiti qui sotto.
-      </p>
+      <p>Per informazioni o richieste:</p>
 
       <div class="contact-row">
         <div class="contact-item">
           <strong>Email</strong>
-          <p>
-            Inserisci qui la tua email, ad esempio:<br />
-            <code>nipponwings.allevamento@example.com</code>
-          </p>
+          <p><code>inserisci-la-tua-email@example.com</code></p>
         </div>
 
         <div class="contact-item">
-          <strong>Social / Profilo</strong>
-          <p>
-            Puoi inserire il link alla tua pagina Instagram del tuo allevamento, ad esempio:<br />
-            <code>instagram.com/nippon_wings_aviary</code>
-          </p>
+          <strong>Instagram</strong>
+          <p><code>instagram.com/nippon_wings_aviary</code></p>
         </div>
 
         <div class="contact-item">
           <strong>Zona</strong>
-          <p>
-            Inserisci la tua provincia/area (es. Udine, Friuli Venezia Giulia) per facilitare i contatti
-            con altri allevatori della zona.
-          </p>
+          <p>Udine – Friuli Venezia Giulia</p>
         </div>
       </div>
 
-      <div class="note-small">
-        Per privacy, valuta quali dati inserire pubblicamente (solo ciò che vuoi rendere visibile).
-      </div>
     </section>
   </div>
 
   <footer>
-    © 2025 · Nippon Wings · Allevamento amatoriale di Passero del Giappone e Lonchura striata domestica ·
-    Sito statico creato con GitHub Pages
+    © 2025 · Nippon Wings · Allevamento amatoriale
   </footer>
 </body>
 </html>
