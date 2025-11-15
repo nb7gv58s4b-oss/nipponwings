@@ -1,0 +1,66 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: #f5f5f0;
+  color: #1f2933;
+}
+
+header {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.logo-img {
+  width: 120px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+nav {
+  background: #111827e8;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.product-box {
+  background: #f9fafb;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
