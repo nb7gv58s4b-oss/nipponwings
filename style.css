@@ -1,54 +1,176 @@
-body {
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  background: #f5f5f0;
-  color: #1f2933;
+/* Palette ispirata al Giappone / ornitologia:
+   - sfondo carta: #fdf7ee
+   - verde natura: #166534
+   - rosso hinomaru: #b91c1c
+   - indaco scuro: #0f172a
+*/
+
+* {
+  box-sizing: border-box;
 }
 
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  background: radial-gradient(circle at top, #fef9c3 0, #fdf7ee 40%, #e5e7eb 100%);
+  color: #111827;
+}
+
+/* HEADER */
+
 header {
-  background: linear-gradient(135deg, #111827, #1f2937);
+  background: linear-gradient(135deg, #0f172a, #111827);
   color: white;
   text-align: center;
-  padding: 30px 20px;
+  padding: 32px 20px 26px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #b91c1c;
+}
+
+/* cerchi decorativi stile sole / luna */
+header::before,
+header::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px solid rgba(248, 250, 252, 0.18);
+  top: -80px;
+  opacity: 0.8;
+}
+
+header::before {
+  right: -40px;
+}
+
+header::after {
+  left: -80px;
+  top: 10px;
 }
 
 .logo-img {
   width: 120px;
   margin-bottom: 10px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+  position: relative;
+  z-index: 1;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+header p {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+/* NAVBAR */
+
 nav {
-  background: #111827e8;
+  background: rgba(15, 23, 42, 0.96);
   text-align: center;
-  padding: 10px;
+  padding: 10px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.6);
 }
 
 nav a {
   color: #e5e7eb;
   text-decoration: none;
   margin: 0 12px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.16em;
 }
 
 nav a:hover {
+  color: #facc15;
   text-decoration: underline;
 }
 
+/* LAYOUT GENERALE */
+
 .container {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 15px;
+  max-width: 960px;
+  margin: 22px auto 32px;
+  padding: 0 16px;
 }
 
 section {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #fefcf7;
+  padding: 20px 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  position: relative;
 }
+
+/* piccolo effetto carta / pennellata */
+section::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, rgba(254, 249, 195, 0.9), transparent);
+  top: -35px;
+  right: -30px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+section h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+section h2::before {
+  content: "";
+  width: 5px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #b91c1c, #f97316);
+}
+
+/* TESTO GENERALE */
+
+p {
+  line-height: 1.6;
+  margin: 0.3rem 0 0.7rem;
+}
+
+ul {
+  margin: 0.4rem 0 0.6rem;
+  padding-left: 1.2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* BLOCCHI SHOP BASE (vecchio product-box, se rimasto) */
 
 .product-box {
   background: #f9fafb;
@@ -58,12 +180,7 @@ section {
   margin-bottom: 16px;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.8rem;
-  color: #6b7280;
-}
+/* GALLERIA */
 
 .gallery-grid {
   display: grid;
@@ -74,7 +191,7 @@ footer {
 
 .gallery-item {
   background: #f9fafb;
-  padding: 12px 14px;
+  padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
 }
@@ -90,18 +207,152 @@ footer {
 }
 
 .gallery-thumb {
-  background: #e5e7eb;
+  background: linear-gradient(135deg, #dcfce7, #fef9c3);
   border-radius: 8px;
   height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.85rem;
-  color: #6b7280;
+  color: #166534;
+  border: 1px dashed #86efac;
 }
 
 .nota-galleria {
   margin-top: 14px;
   font-size: 0.8rem;
   color: #6b7280;
+}
+
+/* SHOP NUOVO */
+
+.shop-note {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-top: 8px;
+  margin-bottom: 18px;
+}
+
+.shop-note a {
+  color: #b91c1c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.shop-note a:hover {
+  text-decoration: underline;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.product-card {
+  background: #f9fafb;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.product-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.product-target {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.product-card ul {
+  margin: 6px 0 4px;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+}
+
+.price {
+  font-weight: 700;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  color: #166534;
+}
+
+/* BOTTONI */
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #b91c1c;
+  background: #b91c1c;
+  color: #fef2f2;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #b91c1c;
+}
+
+/* NOTE PICCOLE SHOP */
+
+.shop-small {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  header {
+    padding: 26px 14px 20px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.12em;
+  }
+
+  nav a {
+    margin: 0 6px;
+    font-size: 0.72rem;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  section {
+    padding: 16px 14px;
+  }
 }
