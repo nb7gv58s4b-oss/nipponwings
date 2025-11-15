@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nippon Wings · Allevamento</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <img src="logo.png" class="logo-img" />
+  <h1>Nippon Wings</h1>
+  <p>Allevamento Amatoriale Passero del Giappone Nero Grigio</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="allevamento.html">Allevamento</a>
+  <a href="shop.html">Shop</a>
+  <a href="contatti.html">Contatti</a>
+</nav>
+
+<div class="container">
+  <section>
+    <h2>🐦 L’Allevamento</h2>
+
+    <p>
+      L’allevamento Nippon Wings è dedicato esclusivamente alla selezione del
+      <strong>Passero del Giappone Nero Grigio</strong>.
+    </p>
+
+    <p>La selezione avviene privilegiando:</p>
+
+    <ul>
+      <li>Colore Nero Grigio uniforme</li>
+      <li>Fertilità e affidabilità nella cova</li>
+      <li>Morfologia armoniosa</li>
+      <li>Temperamento tranquillo</li>
+      <li>Robustezza generale</li>
+    </ul>
+
+    <p>
+      L’ambiente è progettato per garantire benessere, ordine e tranquillità,
+      con un’illuminazione corretta, buona ventilazione e monitoraggio costante.
+    </p>
+
+  </section>
+</div>
+
+<footer>
+  © 2025 · Nippon Wings
+</footer>
+
+</body>
+</html>
