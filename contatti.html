@@ -24,78 +24,72 @@
 
 <div class="container">
   <section id="contatti">
-    <h2>📨 Contatti</h2>
+    <h2>📨 Contattami</h2>
     <p>
-      Di seguito trovi tutti i riferimenti, suddivisi chiaramente per argomento, così puoi contattarmi
-      nel modo più efficace a seconda della tua richiesta.
+      Per informazioni su soggetti disponibili, nidi artigianali o per qualsiasi altra richiesta,
+      compila il modulo seguente. Riceverai una risposta il prima possibile.
     </p>
 
-    <!-- GRIGLIA PRINCIPALE -->
-    <div style="display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:20px;">
+    <!-- FORM FUNZIONANTE CON FORMSUBMIT -->
+    <form action="https://formsubmit.co/alessandrodugo.rio@gmail.com" 
+          method="POST"
+          class="contact-form"
+          style="display:flex; flex-direction:column; gap:14px; margin-top:20px; max-width:600px;">
 
-      <!-- CONTATTI PER SOGGETTI / ALLEVAMENTO -->
-      <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:16px;">
-        <h3 style="margin-top:0;">🐦 Contatti per soggetti e allevamento</h3>
-        <p style="font-size:0.9rem; color:#4b5563;">
-          Per informazioni su soggetti disponibili, riproduttori, linee di selezione
-          o aspetti tecnici del Passero del Giappone Nero Grigio:
-        </p>
-        <ul style="margin-left:18px;">
-          <li><strong>Email dedicata:</strong><br>
-            <a href="mailto:alessandrodugo.rio@gmail.com">alessandrodugo.rio@gmail.com</a>
-          </li>
-          <li><strong>Instagram Direct:</strong><br>
-            <a href="https://www.instagram.com/nippon_wings_aviary" target="_blank">@nippon_wings_aviary</a>
-          </li>
-        </ul>
+      <!-- Impostazioni FormSubmit -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://tuonome.github.io/tuosito/contatti.html?success=true">
+
+      <div style="display:flex; gap:12px;">
+        <div style="flex:1;">
+          <label for="nome"><strong>Nome</strong></label><br>
+          <input type="text" id="nome" name="nome" required
+                 style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px;">
+        </div>
+
+        <div style="flex:1;">
+          <label for="cognome"><strong>Cognome</strong></label><br>
+          <input type="text" id="cognome" name="cognome" required
+                 style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px;">
+        </div>
       </div>
 
-      <!-- CONTATTI PER NIDI E SHOP -->
-      <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:16px;">
-        <h3 style="margin-top:0;">🛒 Contatti per Nidi e Shop</h3>
-        <p style="font-size:0.9rem; color:#4b5563;">
-          Per richieste su nidi artigianali, preventivi, spedizioni o personalizzazioni:
-        </p>
-        <ul style="margin-left:18px;">
-          <li><strong>Email ordini:</strong><br>
-            <a href="mailto:alessandrodugo.rio@gmail.com">alessandrodugo.rio@gmail.com</a>
-          </li>
-          <li><strong>Instagram:</strong><br>
-            <a href="https://www.instagram.com/nippon_wings_aviary" target="_blank">@nippon_wings_aviary</a>
-          </li>
-        </ul>
+      <div>
+        <label for="email"><strong>Email</strong></label><br>
+        <input type="email" id="email" name="email" required
+               style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px;">
       </div>
 
-      <!-- CONTATTI PER COLLABORAZIONI / INFO -->
-      <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:16px;">
-        <h3 style="margin-top:0;">🤝 Collaborazioni e informazioni tecniche</h3>
-        <p style="font-size:0.9rem; color:#4b5563;">
-          Per richieste tecniche avanzate, collaborazioni, progetti o materiale informativo:
-        </p>
-        <ul style="margin-left:18px;">
-          <li><strong>Email:</strong><br>
-            <a href="mailto:alessandrodugo.rio@gmail.com">alessandrodugo.rio@gmail.com</a>
-          </li>
-          <li><strong>Instagram:</strong><br>
-            <a href="https://www.instagram.com/nippon_wings_aviary" target="_blank">@nippon_wings_aviary</a>
-          </li>
-        </ul>
+      <div>
+        <label for="messaggio"><strong>Messaggio</strong></label><br>
+        <textarea id="messaggio" name="messaggio" rows="6" required
+                  style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px;"></textarea>
       </div>
 
-      <!-- ZONA -->
-      <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:16px;">
-        <h3 style="margin-top:0;">📍 Zona</h3>
-        <p style="font-size:0.9rem; color:#4b5563;">L’allevamento si trova a:</p>
-        <p><strong>Udine – Friuli Venezia Giulia</strong><br>
-        (visite solo su accordo)</p>
-      </div>
+      <button type="submit"
+              style="padding:10px 18px; background:#1f2937; color:white; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
+        Invia richiesta
+      </button>
+    </form>
 
-    </div>
+    <!-- MESSAGGIO DI CONFERMA (opzionale) -->
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("success")) {
+        const msg = document.createElement("p");
+        msg.textContent = "📬 Messaggio inviato correttamente! Ti risponderò al più presto.";
+        msg.style.marginTop = "15px";
+        msg.style.fontWeight = "bold";
+        msg.style.color = "#059669";
+        document.querySelector("#contatti").appendChild(msg);
+      }
+    </script>
 
-    <h3 style="margin-top:30px;">📌 Suggerimento per contattarmi al meglio</h3>
-    <p style="font-size:0.85rem; color:#6b7280;">
-      Quando scrivi, indica sempre l’argomento (es. “nidi”, “soggetti disponibili”, “collaborazione”, 
-      “informazioni tecniche”) così posso rispondere in modo immediato e preciso.
+    <h3 style="margin-top:30px;">📧 Contatto diretto</h3>
+    <p>
+      Preferisci scrivere manualmente?  
+      Email: <strong><a href="mailto:alessandrodugo.rio@gmail.com">alessandrodugo.rio@gmail.com</a></strong>
     </p>
 
   </section>
@@ -107,4 +101,3 @@
 
 </body>
 </html>
-
