@@ -25,12 +25,13 @@
 <div class="container">
   <section id="contatti">
     <h2>📨 Contattami</h2>
+
     <p>
-      Per informazioni su soggetti disponibili, nidi artigianali o per qualsiasi altra richiesta,
-      compila il modulo seguente. Riceverai una risposta il prima possibile.
+      Per informazioni sui soggetti, nidi artigianali o richieste varie, compila il modulo qui sotto.
+      Riceverai una risposta appena possibile.
     </p>
 
-    <!-- FORM FUNZIONANTE CON FORMSUBMIT -->
+    <!-- FORM CONTATTI FUNZIONANTE -->
     <form action="https://formsubmit.co/alessandrodugo.rio@gmail.com" 
           method="POST"
           class="contact-form"
@@ -39,7 +40,7 @@
       <!-- Impostazioni FormSubmit -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://nb7gv58s4b-oss.github.io/nipponwings/">
+      <input type="hidden" name="_next" value="https://nb7gv58s4b-oss.github.io/nipponwings/contatti.html?success=true">
 
       <div style="display:flex; gap:12px;">
         <div style="flex:1;">
@@ -73,7 +74,7 @@
       </button>
     </form>
 
-    <!-- MESSAGGIO DI CONFERMA (opzionale) -->
+    <!-- MESSAGGIO DI CONFERMA -->
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get("success")) {
@@ -88,7 +89,7 @@
 
     <h3 style="margin-top:30px;">📧 Contatto diretto</h3>
     <p>
-      Preferisci scrivere manualmente?  
+      Preferisci scrivere manualmente?<br>
       Email: <strong><a href="mailto:alessandrodugo.rio@gmail.com">alessandrodugo.rio@gmail.com</a></strong>
     </p>
 
@@ -101,3 +102,4 @@
 
 </body>
 </html>
+
