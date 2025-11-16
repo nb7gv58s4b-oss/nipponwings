@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nippon Wings · Prenotazione soggetti</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <img src="logo.png" class="logo-img" alt="Logo Nippon Wings" />
+  <h1>Nippon Wings</h1>
+  <p>Allevamento Amatoriale Passero del Giappone Nero Grigio</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="allevamento.html">Allevamento</a>
+  <a href="galleria.html">Galleria</a>
+  <a href="shop.html">Shop</a>
+  <a href="contatti.html">Contatti</a>
+</nav>
+
+<div class="container">
+  <section id="prenotazioni">
+    <h2>📝 Sistema di prenotazione soggetti</h2>
+
+    <p>
+      Questa sezione è dedicata esclusivamente alla <strong>prenotazione dei soggetti</strong>
+      dell’allevamento <strong>Nippon Wings</strong>. Non si tratta di un e-commerce automatico,
+      ma di un <strong>contatto diretto</strong> per valutare disponibilità, periodo e tipologia
+      di soggetto più adatti alle tue esigenze.
+    </p>
+
+    <p>
+      Le prenotazioni vengono gestite in base a:
+    </p>
+    <ul>
+      <li>periodo dell’anno e andamento delle covate;</li>
+      <li>qualità dei soggetti disponibili in quel momento;</li>
+      <li>obiettivo dell’acquirente (coppia da riproduzione, progetto di selezione, soggetti da mostra).</li>
+    </ul>
+
+    <h3>📊 Tipologie di soggetti prenotabili</h3>
+
+    <div style="overflow-x:auto; margin-top:10px;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+        <thead>
+          <tr style="background:#f3f4f6;">
+            <th style="border:1px solid #e5e7eb; padding:6px 8px; text-align:left;">Tipologia</th>
+            <th style="border:1px solid #e5e7eb; padding:6px 8px; text-align:left;">Descrizione</th>
+            <th style="border:1px solid #e5e7eb; padding:6px 8px; text-align:left;">Stato indicativo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border:1px solid #e5e7eb; padding:6px 8px;"><strong>Novelli Nero Grigio</strong></td>
+            <td style="border:1px solid #e5e7eb; padding:6px 8px;">
+              Soggetti giovani, selezionati per struttura e mantello, ideali per avviare o rinforzare una linea.
+            </td>
+            <td style="border:1px solid #e5e7eb; padding:6px 8px;">Disponibilità variabile in base alla stagione</td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #e5e7eb; padding:6px 8px;"><strong>Coppie da riproduzione</strong></td>
+            <td style="border:1px solid #e5e7eb; padding:6px 8px;">
+              Coppie selezionate, già testate in allevamento o impostate per progetti specifici.
+            </td>
+            <td style="border:1px solid #e5e7eb; padding:6px 8px;">Su valutazione, disponibilità limitata</td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #e5e7eb; padding:6px 8px;"><strong>Soggetti da selezione</strong></td>
+            <td style="border:1px solid #e5e7eb; padding:6px 8px;">
+              Soggetti con caratteristiche interessanti per progetti mirati (morfologia, colore, linea genetica).
+            </td>
+            <td style="border:1px solid #e5e7eb; padding:6px 8px;">Valutati caso per caso</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:20px;">⚙️ Come funziona la prenotazione</h3>
+    <ol style="padding-left:1.2rem; font-size:0.9rem;">
+      <li>Compili il modulo di prenotazione indicando che sei interessato a <strong>soggetti Nippon Wings</strong>.</li>
+      <li>Specifichi <strong>tipologia</strong> (novelli, coppie, soggetti da selezione) e un’idea del progetto che hai in mente.</li>
+      <li>Ricevi una risposta con <strong>disponibilità reale</strong>, tempi possibili e condizioni.</li>
+      <li>Solo dopo conferma reciproca si passa ad accordarsi su ritiro o eventuale spedizione.</li>
+    </ol>
+
+    <div style="margin:18px 0;">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSf18qskRcsvGrVJSdscT7f9eGkHV-raDUS-2Eb3VC95Hp-u6A/viewform?embedded=true"
+         class="btn" target="_blank">
+        Compila il modulo di prenotazione
+      </a>
+    </div>
+
+    <p style="font-size:0.85rem; color:#6b7280;">
+      Nel modulo, indica chiaramente che la richiesta riguarda la
+      <strong>prenotazione di soggetti</strong> e specifica qualsiasi dettaglio utile
+      (numero di soggetti, sesso desiderato, eventuale esperienza di allevamento, progetti futuri).
+    </p>
+
+    <h3 style="margin-top:24px;">📍 Note importanti</h3>
+    <ul style="font-size:0.9rem;">
+      <li>Le disponibilità possono cambiare rapidamente in base all’andamento della stagione.</li>
+      <li>Non tutti i soggetti nati vengono destinati alla cessione: molti restano in allevamento per progetti di selezione.</li>
+      <li>La qualità dei soggetti ha sempre priorità rispetto alla quantità.</li>
+      <li>Il ritiro avviene preferibilmente <strong>di persona in zona Udine</strong>; eventuali altre soluzioni vanno valutate singolarmente.</li>
+    </ul>
+
+  </section>
+</div>
+
+<footer>
+  © 2025 · Nippon Wings · Allevamento Amatoriale Passero del Giappone Nero Grigio
+</footer>
+
+</body>
+</html>
