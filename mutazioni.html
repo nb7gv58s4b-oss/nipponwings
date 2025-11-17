@@ -112,42 +112,35 @@
       width: 100%;
     }
 
+    <style>
+  .mutazioni-side {
+    position: sticky;
+    top: 120px;
+    height: auto;
+  }
+
+  .mutazione-img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: contain;
+    border: 1px solid #cccccc;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
     .mutazioni-side {
-      position: sticky;
-      top: 120px;
-      height: auto;
+      position: static;
+      top: auto;
+      margin-top: 1rem;
     }
-
     .mutazione-img {
-      width: 100%;
-      border-radius: 1rem;
-      object-fit: cover;
-      border: 1px solid #cccccc;
-      display: block;
+      max-width: 100%;
     }
+  }
+</style>
 
-    .mutazione-img-caption {
-      font-size: 0.85rem;
-      opacity: 0.8;
-      margin-top: 0.5rem;
-    }
-
-    @media (max-width: 900px) {
-      .mutazioni-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .mutazioni-side {
-        position: static;
-        top: auto;
-        margin-top: 1rem;
-      }
-
-      .mutazioni-index ul {
-        columns: 1;
-      }
-    }
-  </style>
 </head>
 <body>
 
