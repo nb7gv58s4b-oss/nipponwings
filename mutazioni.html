@@ -8,31 +8,36 @@
 
   <style>
     .mutazioni-wrapper {
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
-      gap: 2rem;
-    }
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+  gap: 2rem;
+  align-items: flex-start;
+}
 
-    .mutazioni-side {
-      position: sticky;
-      top: 120px;
-    }
+.mutazioni-side {
+  position: relative;  /* <-- si muove insieme alla pagina */
+  top: 0;
+}
 
-    .mutazione-img {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 1rem;
-      border: 1px solid #ccc;
-      display: block;
-    }
+.mutazione-img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 1rem;
+  border: 1px solid #ccc;
+  display: block;
+  object-fit: contain;
+}
 
-    @media (max-width: 900px) {
-      .mutazioni-wrapper {
-        grid-template-columns: 1fr;
-      }
-      .mutazioni-side {
-        position: static;
-        margin-top: 1rem;
+@media (max-width: 900px) {
+  .mutazioni-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .mutazioni-side {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+
       }
     }
 
