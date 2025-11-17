@@ -1,168 +1,956 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Nippon Wings · Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nippon Wings è un allevamento amatoriale specializzato nel Passero del Giappone Nero Grigio, con selezione tecnica e nidi artigianali testati in allevamento.">
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f3eb;
+      --bg-light: #fffaf2;
+      --text: #222222;
+      --muted: #666666;
+      --accent: #b32323;
+      --accent-soft: #e7c7c2;
+      --border: #e0d6c5;
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout di base */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background-color: #f0e6d5;
+      flex-shrink: 0;
+    }
+
+    .nav-title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-title h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .nav-title span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.95rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-menu a {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-menu a:hover {
+      background-color: var(--accent-soft);
+      border-color: var(--accent-soft);
+    }
+
+    .nav-menu a.active {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .nav-menu .primary-link {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .nav-menu .primary-link:hover {
+      background-color: var(--accent);
+      color: #ffffff;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* HERO */
+    .hero {
+      margin-top: 1.25rem;
+      margin-bottom: 2.5rem;
+      padding: 1.75rem 1.5rem;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, #f9e5dc 0, #f7f3eb 50%, #fefefe 100%);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.15rem 0.65rem;
+      border-radius: 999px;
+      background-color: #f0e0dd;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-tag span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background-color: var(--accent);
+    }
+
+    .hero-title {
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-badge {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.08s;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: #971f1f;
+      border-color: #971f1f;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: rgba(255, 255, 255, 0.6);
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      background-color: #ffffff;
+      border-color: #cbbba3;
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-visual {
+      justify-self: stretch;
+    }
+
+    .hero-card {
+      background-color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1rem 1rem 1.1rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .hero-card-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background-color: #f0e6d5;
+    }
+
+    .hero-card-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .hero-card-pill {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background-color: #f9f3ea;
+    }
+
+    .hero-logo {
+      width: 80px;
+      margin-bottom: 0.3rem;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #f0e0d0;
+      align-self: flex-end;
+    }
+
+    /* Sezione panoramica */
+    .section {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1rem 1rem 1.1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.25rem;
+    }
+
+    .card ul li {
+      padding-left: 1.1rem;
+      position: relative;
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 0.1rem;
+    }
+
+    .card ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    /* Blocco Nero Grigio */
+    .focus-block {
+      background-color: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.25rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 2.25rem;
+    }
+
+    .focus-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .focus-grid ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .focus-grid ul li {
+      padding-left: 1.1rem;
+      position: relative;
+      margin-bottom: 0.15rem;
+    }
+
+    .focus-grid ul li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .focus-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    .focus-highlight {
+      font-size: 0.86rem;
+      padding: 0.55rem 0.8rem;
+      border-radius: var(--radius-md);
+      background-color: #f9f0e0;
+      border: 1px solid #f0e0d0;
+    }
+
+    /* Storia tecnica */
+    .history-intro {
+      margin-bottom: 1.75rem;
+    }
+
+    .history-intro p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .history-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-card {
+      background-color: #ffffff;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 0.7rem 0.75rem 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .timeline-card span {
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .history-link {
+      margin-top: 0.75rem;
+    }
+
+    .history-link a {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding-bottom: 0.05rem;
+      border-bottom: 1px solid rgba(179, 35, 35, 0.25);
+    }
+
+    .history-link a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .history-full {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .history-full h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .history-full h3 {
+      font-size: 1.05rem;
+      margin-top: 1.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .history-full p {
+      font-size: 0.9rem;
+      margin-bottom: 0.45rem;
+      color: var(--text);
+    }
+
+    .history-full ul {
+      padding-left: 1.1rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+    }
+
+    .history-full li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-light);
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.4rem;
+    }
+
+    /* Responsivo */
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .cards-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .focus-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .history-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-menu {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding: 1.35rem 1.1rem;
+        margin-top: 0.9rem;
+      }
+
+      .hero-title {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        padding-inline: 1rem;
+      }
+
+      .history-timeline {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <a href="index.html" class="nav-logo" aria-label="Nippon Wings Home">
+            <img src="logo.png" alt="Logo Nippon Wings">
+          </a>
+          <div class="nav-title">
+            <h1>Nippon Wings</h1>
+            <span>Allevamento amatoriale Passero del Giappone Nero Grigio</span>
+          </div>
+        </div>
+        <div class="nav-menu">
+          <a href="index.html" class="active">Home</a>
+          <a href="allevamento.html">Allevamento</a>
+          <a href="mutazioni.html">Mutazioni</a>
+          <a href="galleria.html">Galleria</a>
+          <a href="shop.html">Shop</a>
+          <a href="prenotazioni.html" class="primary-link">Prenotazioni</a>
+          <a href="contatti.html">Contatti</a>
+        </div>
+      </nav>
+    </header>
 
-<header>
-  <img src="logo.png" class="logo-img" alt="Logo Nippon Wings" />
-  <h1>Nippon Wings</h1>
-  <p>Allevamento Amatoriale Passero del Giappone Nero Grigio</p>
-</header>
+    <main>
+      <div class="container">
+        <!-- HERO -->
+        <section class="hero">
+          <div>
+            <div class="hero-tag">
+              <span></span>
+              <div>Passero del Giappone · Nero Grigio</div>
+            </div>
+            <h2 class="hero-title">
+              Selezione tecnica dedicata al<br>Passero del Giappone Nero Grigio
+            </h2>
+            <p class="hero-subtitle">
+              Nippon Wings è un allevamento amatoriale nato per lavorare in modo strutturato su una sola specie e una sola mutazione: il Passero del Giappone Nero Grigio. 
+              L’obiettivo è creare linee stabili, eleganti e tecnicamente coerenti nel tempo.
+            </p>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="allevamento.html">Allevamento</a>
-  <a href="mutazioni.html">Mutazioni</a>
-  <a href="galleria.html">Galleria</a>
-  <a href="shop.html">Shop</a>
-  <a href="contatti.html">Contatti</a>
-</nav>
+            <div class="hero-badges">
+              <div class="hero-badge">Approccio moderno e documentato</div>
+              <div class="hero-badge">Focus su morfologia e colore</div>
+              <div class="hero-badge">Nidi con telecamere e controllo microclima</div>
+            </div>
 
-<div class="container">
+            <div class="hero-actions">
+              <a href="allevamento.html" class="btn btn-primary">Scopri l’allevamento</a>
+              <a href="prenotazioni.html" class="btn btn-outline">Prenota i soggetti</a>
+              <a href="#storia-completa" class="btn btn-outline">Leggi la storia tecnica</a>
+            </div>
 
-  <!-- STORIA ESTESA + TIMELINE -->
-  <section id="storia">
-    <h2>🐦 Storia Tecnica e Completa del Passero del Giappone</h2>
+            <p class="hero-note">
+              Tutto ciò che vedi sul sito nasce da un lavoro reale in allevamento: scelte motivate, testate e registrate stagione dopo stagione.
+            </p>
+          </div>
 
-    <p>
-      Il <strong>Passero del Giappone (<em>Lonchura striata domestica</em>)</strong> è una delle specie domestiche
-      più antiche e significative dell’ornitologia mondiale. La sua storia attraversa oltre tre secoli
-      di selezione mirata, trasformandolo da gruppo di piccoli Estrildidi selvatici a una delle forme
-      domestiche più stabili, affidabili e tecnicamente raffinate mai ottenute dall’uomo.
-    </p>
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <div>
+                  <div class="hero-card-title">Nippon Wings in breve</div>
+                  <div class="hero-card-body">
+                    Linee di Nero Grigio impostate come un progetto tecnico: osservazione costante, genealogie tracciate, ambiente controllato e selezione rigorosa di ogni generazione.
+                  </div>
+                </div>
+                <div class="hero-card-tag">Allevamento</div>
+              </div>
 
-    <h3>📌 Origini antiche della domesticazione (1600–1700)</h3>
-    <p>
-      Tra la fine del XVII secolo e l’inizio del XVIII, in Cina, Giappone e alcune regioni del Sud-est
-      asiatico si sviluppò l’allevamento di diverse specie del genere <em>Lonchura</em>. Le specie
-      maggiormente coinvolte furono:
-    </p>
-    <ul>
-      <li><em>Lonchura striata</em> – base genetica principale;</li>
-      <li><em>Lonchura acuticauda</em> – contributo a struttura e portamento;</li>
-      <li><em>Lonchura punctulata</em> – possibili apporti nel comportamento sociale.</li>
-    </ul>
+              <div class="hero-card-meta">
+                <div class="hero-card-pill">Selezione morfologica e cromatica</div>
+                <div class="hero-card-pill">Gestione tracciata delle covate</div>
+                <div class="hero-card-pill">Osservazione tramite telecamere nei nidi</div>
+              </div>
 
-    <p>
-      Gli allevatori asiatici iniziarono a selezionare i soggetti più docili, quelli che tolleravano
-      meglio la cattività e che si riproducevano più regolarmente. Questo processo avveniva in piccoli
-      allevamenti familiari, spesso legati anche alla tradizione culturale giapponese della cura degli
-      uccelli.
-    </p>
+              <div class="focus-note">
+                La mutazione Nero Grigio è una delle più tecniche e “sensibili”: richiede costanza, ambiente stabile e scelte riproduttive pianificate.
+              </div>
 
-    <h3>📌 Consolidamento della forma domestica (1700–1800)</h3>
-    <p>
-      Durante il XVIII secolo la selezione divenne più sistematica. In Giappone, in particolare,
-      l’allevamento degli Estrildidi era considerato una forma di arte domestica. Gli allevatori
-      perfezionarono la scelta dei soggetti privilegiando:
-    </p>
-    <ul>
-      <li>sociabilità e comportamento di gruppo;</li>
-      <li>capacità di allevare i piccoli senza difficoltà;</li>
-      <li>resistenza alle variazioni climatiche;</li>
-      <li>riproducibilità costante in ambiente controllato.</li>
-    </ul>
+              <div class="hero-logo">
+                <img src="logo.png" alt="Logo Nippon Wings">
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <p>
-      Fu in questo periodo che si consolidò una popolazione distinta, totalmente domestica, capace di
-      riprodursi regolarmente senza più intervento di individui selvatici. È questo il vero punto di
-      nascita del moderno <strong>Passero del Giappone</strong>.
-    </p>
+        <!-- PANORAMICA ALLEVAMENTO -->
+        <section class="section">
+          <div class="section-header">
+            <h2 class="section-title">Come è impostato l’allevamento</h2>
+            <p class="section-subtitle">
+              Un solo obiettivo: costruire e mantenere nel tempo una linea di Nero Grigio solida, elegante e ripetibile.
+            </p>
+          </div>
 
-    <h3>📌 Diffusione internazionale e arrivo in Europa (1800–1850)</h3>
-    <p>
-      Con l’apertura delle nuove rotte commerciali nel XIX secolo, il Passero del Giappone arrivò
-      nelle principali città europee. Fu immediatamente apprezzato per:
-    </p>
-    <ul>
-      <li>la sua estrema affidabilità riproduttiva;</li>
-      <li>la docilità, rara negli Estrildidi selvatici;</li>
-      <li>l’utilità come balia per Diamanti di Gould, Amadine e Lonchure più sensibili.</li>
-    </ul>
+          <div class="cards-3">
+            <article class="card">
+              <h3>Selezione ragionata</h3>
+              <p>
+                Le coppie non vengono formate “a caso”: si lavora per linee, scegliendo soggetti che possano correggere e rafforzare struttura, piumaggio e colore.
+              </p>
+              <ul>
+                <li>Struttura compatta e proporzionata</li>
+                <li>Piumaggio serico e aderente</li>
+                <li>Mascherina scura ben definita</li>
+              </ul>
+            </article>
 
-    <p>
-      Entro pochi decenni divenne una delle specie più allevate in Europa, contribuendo allo sviluppo
-      dell’ornitologia moderna.
-    </p>
+            <article class="card">
+              <h3>Ambiente controllato</h3>
+              <p>
+                Gabbie ordinate, fotoperiodo regolato, ventilazione corretta e riduzione al minimo dei fattori di stress.
+              </p>
+              <ul>
+                <li>Illuminazione progressiva e stagionale</li>
+                <li>Ricambio d’aria senza correnti dirette</li>
+                <li>Gestione silenziosa e costante</li>
+              </ul>
+            </article>
 
-    <h3>📌 Sviluppo della selezione morfologica (1900–1950)</h3>
-    <p>
-      All’inizio del XX secolo iniziò la selezione moderna basata su criteri morfologici. Gli
-      allevatori europei e asiatici iniziarono a definire e stabilizzare:
-    </p>
-    <ul>
-      <li>struttura compatta e ben proporzionata;</li>
-      <li>linea dorsale regolare;</li>
-      <li>testa piena e rotonda;</li>
-      <li>portamento armonioso;</li>
-      <li>piumaggio aderente e serico.</li>
-    </ul>
+            <article class="card">
+              <h3>Metodo e registrazione</h3>
+              <p>
+                Ogni riproduzione viene registrata: deposizioni, schiuse, svezzamento e genealogie. I dati non restano “a memoria”, ma diventano uno strumento di lavoro.
+              </p>
+              <ul>
+                <li>Anellamento puntuale dei novelli</li>
+                <li>Tracciabilità delle linee</li>
+                <li>Selezione dei giovani migliori</li>
+              </ul>
+            </article>
+          </div>
+        </section>
 
-    <p>
-      Questo fu il periodo in cui il Passero del Giappone iniziò a essere considerato non solo una
-      balia, ma anche un vero e proprio soggetto da selezione.
-    </p>
+        <!-- FOCUS NERO GRIGIO -->
+        <section class="focus-block">
+          <h2 class="focus-title">Perché il Nero Grigio</h2>
+          <div class="focus-grid">
+            <div>
+              <p>
+                Tra le varie mutazioni del Passero del Giappone, il Nero Grigio è una delle più tecniche e selettive. Richiede attenzione sia alla parte cromatica che all’impostazione generale del soggetto.
+              </p>
+              <ul>
+                <li>Uniformità cromatica grigio fredda su tutto il mantello</li>
+                <li>Mascherina scura definita e stabile nel tempo</li>
+                <li>Piumaggio compatto, serico e molto aderente</li>
+                <li>Portamento elegante e coerente con lo standard moderno</li>
+                <li>Assenza di infiltrazioni indesiderate di colore</li>
+                <li>Buona fertilità per mantenere linee solide</li>
+              </ul>
+            </div>
+            <div>
+              <div class="focus-highlight">
+                L’obiettivo di Nippon Wings è un Nero Grigio moderno, tecnicamente corretto e affidabile in allevamento: soggetti belli da vedere, ma anche coerenti, ripetibili e gestibili stagione dopo stagione.
+              </div>
+              <p class="focus-note">
+                Vuoi approfondire il lavoro sulle mutazioni? Visita la pagina <strong>Mutazioni</strong> per una panoramica tecnica sulle varietà e sui loro standard.
+              </p>
+            </div>
+          </div>
+        </section>
 
-    <h3>📌 Evoluzione cromatica e mutazioni (1950–2000)</h3>
-    <p>
-      A partire dalla metà del secolo scorso iniziarono a comparire numerose mutazioni cromatiche,
-      frutto sia della selezione spontanea sia di accoppiamenti mirati. Tra queste:
-    </p>
-    <ul>
-      <li>Bruno;</li>
-      <li>Pezzato;</li>
-      <li>Bianco;</li>
-      <li>Grigio;</li>
-      <li>Ciuffato (varietà fenotipica);</li>
-      <li><strong>Nero Grigio</strong> – una delle più tecniche e apprezzate.</li>
-    </ul>
+        <!-- STORIA TECNICA - INTRO -->
+        <section class="section">
+          <div class="section-header">
+            <h2 class="section-title">Storia tecnica del Passero del Giappone</h2>
+          </div>
 
-    <h3>📌 Selezione moderna specializzata (2000–oggi)</h3>
-    <p>
-      Nell’ultimo ventennio la selezione del Passero del Giappone ha raggiunto livelli tecnici molto
-      elevati. La mutazione <strong>Nero Grigio</strong> si è affermata come una delle più complesse,
-      richiedendo una gestione avanzata delle linee e un monitoraggio costante dei fenotipi.
-    </p>
+          <div class="history-intro">
+            <p>
+              Il Passero del Giappone (Lonchura striata domestica) è una specie domestica con oltre tre secoli di storia alle spalle. 
+              Da piccoli Estrildidi selvatici a popolazione completamente domestica, la sua evoluzione racconta una delle selezioni più lunghe e stabili dell’ornitologia.
+            </p>
+            <p>
+              Qui sotto trovi una sintesi cronologica; più in basso, nella <strong>Storia completa</strong>, puoi leggere il percorso dettagliato dalle origini fino alla selezione moderna del Nero Grigio.
+            </p>
 
-    <ul>
-      <li>Uniformità cromatica grigio fredda;</li>
-      <li>Mascherina scura definita e stabile;</li>
-      <li>Piumaggio compatto e serico;</li>
-      <li>Portamento elegante e coerente;</li>
-      <li>Assenza di infiltrazioni cromatiche indesiderate;</li>
-      <li>Ottima fertilità per mantenere linee solide.</li>
-    </ul>
+            <div class="history-timeline">
+              <div class="timeline-card">
+                <span>1600–1700</span>
+                Inizio della domesticazione in Asia: primi lavori su docilità, resistenza e capacità riproduttiva in cattività.
+              </div>
+              <div class="timeline-card">
+                <span>1700–1800</span>
+                Stabilizzazione della popolazione domestica in Giappone: nasce la forma base del Passero del Giappone.
+              </div>
+              <div class="timeline-card">
+                <span>1800–1900</span>
+                Arrivo in Europa e sviluppo come balia affidabile per Estrildidi più delicati.
+              </div>
+              <div class="timeline-card">
+                <span>1900–oggi</span>
+                Selezione morfologica e cromatica moderna, con sviluppo di numerose mutazioni – tra cui il Nero Grigio.
+              </div>
+            </div>
 
-    <h3>📜 Timeline Cronologica Completa</h3>
-    <ul>
-      <li><strong>1600–1700:</strong> Inizio della domesticazione in Asia; prime selezioni su docilità e resistenza.</li>
-      <li><strong>1700–1800:</strong> Stabilizzazione della nuova popolazione domestica; nasce la forma base del Passero del Giappone.</li>
-      <li><strong>1800–1850:</strong> Introduzione in Europa; rapida diffusione negli allevamenti occidentali.</li>
-      <li><strong>1850–1900:</strong> Consolidamento del ruolo di balia per molte specie di Estrildidi.</li>
-      <li><strong>1900–1950:</strong> Inizio della selezione morfologica moderna.</li>
-      <li><strong>1950–1975:</strong> Comparsa e diffusione delle principali mutazioni cromatiche.</li>
-      <li><strong>1975–2000:</strong> Sviluppo delle prime linee tecniche di Nero Grigio.</li>
-      <li><strong>2000–oggi:</strong> Selezione altamente specialistica, con standard sempre più precisi.</li>
-    </ul>
+            <div class="history-link">
+              <a href="#storia-completa">
+                Vai alla storia tecnica completa
+                <span>↓</span>
+              </a>
+            </div>
+          </div>
+        </section>
 
-    <p>
-      Oggi il Passero del Giappone è considerato un pilastro dell’ornitologia mondiale: completamente
-      domestico, tecnicamente selezionabile, affidabile e dotato di una storia evolutiva unica per
-      durata e complessità. La mutazione <strong>Nero Grigio</strong> rappresenta uno degli apici della
-      selezione moderna, simbolo di eleganza e rigore genetico.
-    </p>
+        <!-- STORIA COMPLETA (CONTENUTO ORIGINALE) -->
+        <section id="storia-completa" class="history-full">
+          <h2>Storia Tecnica e Completa del Passero del Giappone</h2>
 
-  </section>
-</div>
+          <p>
+            Il Passero del Giappone (Lonchura striata domestica) è una delle specie domestiche più antiche e significative dell’ornitologia mondiale. 
+            La sua storia attraversa oltre tre secoli di selezione mirata, trasformandolo da gruppo di piccoli Estrildidi selvatici a una delle forme domestiche più stabili, affidabili e tecnicamente raffinate mai ottenute dall’uomo.
+          </p>
 
-<footer>
-  © 2025 · Nippon Wings · Allevamento Amatoriale Passero del Giappone Nero Grigio di Dugo Alessandro
-</footer>
+          <h3>Origini antiche della domesticazione (1600–1700)</h3>
+          <p>
+            Tra la fine del XVII secolo e l’inizio del XVIII, in Cina, Giappone e alcune regioni del Sud-est asiatico si sviluppò l’allevamento di diverse specie del genere <em>Lonchura</em>. 
+            Le specie maggiormente coinvolte furono:
+          </p>
+          <ul>
+            <li><em>Lonchura striata</em> – base genetica principale;</li>
+            <li><em>Lonchura acuticauda</em> – contributo a struttura e portamento;</li>
+            <li><em>Lonchura punctulata</em> – possibili apporti nel comportamento sociale.</li>
+          </ul>
+          <p>
+            Gli allevatori asiatici iniziarono a selezionare i soggetti più docili, quelli che tolleravano meglio la cattività e che si riproducevano più regolarmente. 
+            Questo processo avveniva in piccoli allevamenti familiari, spesso legati anche alla tradizione culturale giapponese della cura degli uccelli.
+          </p>
 
+          <h3>Consolidamento della forma domestica (1700–1800)</h3>
+          <p>
+            Durante il XVIII secolo la selezione divenne più sistematica. 
+            In Giappone, in particolare, l’allevamento degli Estrildidi era considerato una forma di arte domestica. 
+            Gli allevatori perfezionarono la scelta dei soggetti privilegiando:
+          </p>
+          <ul>
+            <li>sociabilità e comportamento di gruppo;</li>
+            <li>capacità di allevare i piccoli senza difficoltà;</li>
+            <li>resistenza alle variazioni climatiche;</li>
+            <li>riproducibilità costante in ambiente controllato.</li>
+          </ul>
+          <p>
+            Fu in questo periodo che si consolidò una popolazione distinta, totalmente domestica, capace di riprodursi regolarmente senza più intervento di individui selvatici. 
+            È questo il vero punto di nascita del moderno Passero del Giappone.
+          </p>
+
+          <h3>Diffusione internazionale e arrivo in Europa (1800–1850)</h3>
+          <p>
+            Con l’apertura delle nuove rotte commerciali nel XIX secolo, il Passero del Giappone arrivò nelle principali città europee. 
+            Fu immediatamente apprezzato per:
+          </p>
+          <ul>
+            <li>la sua estrema affidabilità riproduttiva;</li>
+            <li>la docilità, rara negli Estrildidi selvatici;</li>
+            <li>l’utilità come balia per Diamanti di Gould, Amadine e Lonchure più sensibili.</li>
+          </ul>
+          <p>
+            Entro pochi decenni divenne una delle specie più allevate in Europa, contribuendo allo sviluppo dell’ornitologia moderna.
+          </p>
+
+          <h3>Sviluppo della selezione morfologica (1900–1950)</h3>
+          <p>
+            All’inizio del XX secolo iniziò la selezione moderna basata su criteri morfologici. 
+            Gli allevatori europei e asiatici iniziarono a definire e stabilizzare:
+          </p>
+          <ul>
+            <li>struttura compatta e ben proporzionata;</li>
+            <li>linea dorsale regolare;</li>
+            <li>testa piena e rotonda;</li>
+            <li>portamento armonioso;</li>
+            <li>piumaggio aderente e serico.</li>
+          </ul>
+          <p>
+            Questo fu il periodo in cui il Passero del Giappone iniziò a essere considerato non solo una balia, ma anche un vero e proprio soggetto da selezione.
+          </p>
+
+          <h3>Evoluzione cromatica e mutazioni (1950–2000)</h3>
+          <p>
+            A partire dalla metà del secolo scorso iniziarono a comparire numerose mutazioni cromatiche, frutto sia della selezione spontanea sia di accoppiamenti mirati. 
+            Tra queste:
+          </p>
+          <ul>
+            <li>Bruno;</li>
+            <li>Pezzato;</li>
+            <li>Bianco;</li>
+            <li>Grigio;</li>
+            <li>Ciuffato (varietà fenotipica);</li>
+            <li>Nero Grigio – una delle più tecniche e apprezzate.</li>
+          </ul>
+
+          <h3>Selezione moderna specializzata (2000–oggi)</h3>
+          <p>
+            Nell’ultimo ventennio la selezione del Passero del Giappone ha raggiunto livelli tecnici molto elevati. 
+            La mutazione Nero Grigio si è affermata come una delle più complesse, richiedendo una gestione avanzata delle linee e un monitoraggio costante dei fenotipi:
+          </p>
+          <ul>
+            <li>Uniformità cromatica grigio fredda;</li>
+            <li>Mascherina scura definita e stabile;</li>
+            <li>Piumaggio compatto e serico;</li>
+            <li>Portamento elegante e coerente;</li>
+            <li>Assenza di infiltrazioni cromatiche indesiderate;</li>
+            <li>Ottima fertilità per mantenere linee solide.</li>
+          </ul>
+
+          <h3>Timeline cronologica completa</h3>
+          <ul>
+            <li><strong>1600–1700:</strong> Inizio della domesticazione in Asia; prime selezioni su docilità e resistenza.</li>
+            <li><strong>1700–1800:</strong> Stabilizzazione della nuova popolazione domestica; nasce la forma base del Passero del Giappone.</li>
+            <li><strong>1800–1850:</strong> Introduzione in Europa; rapida diffusione negli allevamenti occidentali.</li>
+            <li><strong>1850–1900:</strong> Consolidamento del ruolo di balia per molte specie di Estrildidi.</li>
+            <li><strong>1900–1950:</strong> Inizio della selezione morfologica moderna.</li>
+            <li><strong>1950–1975:</strong> Comparsa e diffusione delle principali mutazioni cromatiche.</li>
+            <li><strong>1975–2000:</strong> Sviluppo delle prime linee tecniche di Nero Grigio.</li>
+            <li><strong>2000–oggi:</strong> Selezione altamente specialistica, con standard sempre più precisi.</li>
+          </ul>
+
+          <p>
+            Oggi il Passero del Giappone è considerato un pilastro dell’ornitologia mondiale: completamente domestico, tecnicamente selezionabile, affidabile e dotato di una storia evolutiva unica per durata e complessità. 
+            La mutazione Nero Grigio rappresenta uno degli apici della selezione moderna, simbolo di eleganza e rigore genetico.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© 2025 · Nippon Wings · Allevamento Amatoriale Passero del Giappone Nero Grigio di Dugo Alessandro</div>
+        <div>Zona Udine · Friuli Venezia Giulia</div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
