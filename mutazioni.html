@@ -1,0 +1,208 @@
+<div class="container">
+
+  <style>
+    /* Layout a due colonne */
+    .mutazioni-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+    }
+
+    /* Colonna testo */
+    .mutazioni-content {
+      width: 100%;
+    }
+
+    /* Colonna immagine */
+    .mutazioni-side {
+      position: sticky;
+      top: 120px;
+      height: fit-content;
+    }
+
+    .mutazione-img {
+      width: 100%;
+      border-radius: 1rem;
+      object-fit: cover;
+      border: 1px solid #cccccc;
+    }
+
+    /* Stili generali già adattati */
+    .mutazioni-section {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .mutazioni-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .mutazioni-index {
+      margin-bottom: 2rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ddd;
+      background: #f8f8f8;
+      font-size: 0.9rem;
+    }
+
+    .mutazioni-index ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      columns: 2;
+    }
+
+    @media(max-width: 900px){
+      .mutazioni-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .mutazioni-side {
+        position: relative;
+        top: 0;
+        margin-top: 1rem;
+      }
+    }
+  </style>
+
+  <div class="mutazioni-wrapper">
+
+    <!-- COLONNA TESTO -->
+    <div class="mutazioni-content">
+
+      <section id="mutazioni">
+        <span class="mutazioni-tag">Lonchura striata domestica · Standard FOI</span>
+        <h2>Mutazioni del Passero del Giappone – Standard FOI</h2>
+        <p class="mutazioni-meta">
+          Scheda tecnica sulle principali mutazioni riconosciute del Passero del Giappone.
+        </p>
+      </section>
+
+      <!-- INDICE -->
+      <section class="mutazioni-index">
+        <h3>Indice mutazioni</h3>
+        <ul>
+          <li><a href="#parametri-generali">Parametri generali FOI</a></li>
+          <li><a href="#nero-bruno">Nero bruno</a></li>
+          <li><a href="#moka-bruno">Moka bruno</a></li>
+          <li><a href="#rosso-bruno">Rosso bruno</a></li>
+          <li><a href="#nero-grigio">Nero grigio</a></li>
+          <li><a href="#moka-grigio">Moka grigio</a></li>
+          <li><a href="#rosso-grigio">Rosso grigio</a></li>
+          <li><a href="#pastello">Pastello</a></li>
+          <li><a href="#ali-chiare">Ali chiare</a></li>
+          <li><a href="#ino">Ino</a></li>
+          <li><a href="#albino">Albino</a></li>
+          <li><a href="#bianco-occhi-neri">Bianco occhi neri</a></li>
+          <li><a href="#bianco-occhi-rossi">Bianco occhi rossi</a></li>
+          <li><a href="#perlato-bruno">Perlato bruno</a></li>
+          <li><a href="#perlato-grigio">Perlato grigio</a></li>
+          <li><a href="#sellato">Sellato</a></li>
+          <li><a href="#altre-combinazioni">Combinazioni</a></li>
+        </ul>
+      </section>
+
+      <!-- PARAMETRI GENERALI -->
+      <section class="mutazioni-section" id="parametri-generali">
+        <h2>1. Parametri generali FOI</h2>
+        <p>Valgono per tutte le mutazioni.</p>
+        <ul>
+          <li><strong>Taglia:</strong> 11–12 cm</li>
+          <li><strong>Forma:</strong> compatta e armoniosa</li>
+          <li><strong>Testa:</strong> rotonda e proporzionata</li>
+          <li><strong>Piumaggio:</strong> serrato e brillante</li>
+          <li><strong>Portamento:</strong> 45–60° sul posatoio</li>
+          <li><strong>Condizioni:</strong> pulizia e salute perfette</li>
+        </ul>
+      </section>
+
+      <!-- MUTAZIONI -->
+      <section class="mutazioni-section" id="nero-bruno">
+        <h2>2. Nero bruno</h2>
+        <p><strong>Varietà ancestrale.</strong></p>
+        <p>Colore di fondo bruno scuro caldo, uniforme con bavaglio ben definito.</p>
+      </section>
+
+      <section class="mutazioni-section" id="moka-bruno">
+        <h2>3. Moka bruno</h2>
+        <p>Bruno-cioccolato omogeneo, tonalità più calda e diluita del nero bruno.</p>
+      </section>
+
+      <section class="mutazioni-section" id="rosso-bruno">
+        <h2>4. Rosso bruno</h2>
+        <p>Tonalità rossiccia intensa, ventre crema caldo, occhi leggermente rubino.</p>
+      </section>
+
+      <section class="mutazioni-section" id="nero-grigio">
+        <h2>5. Nero grigio</h2>
+        <p>Grigio antracite freddo, uniforme, mascherina più scura ma non nera piena.</p>
+      </section>
+
+      <section class="mutazioni-section" id="moka-grigio">
+        <h2>6. Moka grigio</h2>
+        <p>Tonalità “cenere calda”, risultato della combinazione moka + grigio.</p>
+      </section>
+
+      <section class="mutazioni-section" id="rosso-grigio">
+        <h2>7. Rosso grigio</h2>
+        <p>Grigio caldo con evidente componente rossiccia, molto armonioso.</p>
+      </section>
+
+      <section class="mutazioni-section" id="pastello">
+        <h2>8. Pastello</h2>
+        <p>Schiarimento generale della melanina, tonalità morbide e diffuse.</p>
+      </section>
+
+      <section class="mutazioni-section" id="ali-chiare">
+        <h2>9. Ali chiare</h2>
+        <p>Remiganti e copritrici chiare, contrasto armonioso col dorso.</p>
+      </section>
+
+      <section class="mutazioni-section" id="ino">
+        <h2>10. Ino</h2>
+        <p>Crema chiarissimo, occhi rubino, quasi totale assenza di eumelanina.</p>
+      </section>
+
+      <section class="mutazioni-section" id="albino">
+        <h2>11. Albino</h2>
+        <p>Bianco puro con occhi rosso vivo; assenza totale di pigmenti.</p>
+      </section>
+
+      <section class="mutazioni-section" id="bianco-occhi-neri">
+        <h2>12. Bianco occhi neri</h2>
+        <p>Piumaggio bianco uniforme, occhi neri; diverso dall’albino.</p>
+      </section>
+
+      <section class="mutazioni-section" id="bianco-occhi-rossi">
+        <h2>13. Bianco occhi rossi</h2>
+        <p>Bianco avorio tenue, occhi rosso rubino non intenso come l’albino.</p>
+      </section>
+
+      <section class="mutazioni-section" id="perlato-bruno">
+        <h2>14. Perlato bruno</h2>
+        <p>Perlatura chiara regolare su base bruna.</p>
+      </section>
+
+      <section class="mutazioni-section" id="perlato-grigio">
+        <h2>15. Perlato grigio</h2>
+        <p>Perlatura armoniosa su base grigia, ben distribuita.</p>
+      </section>
+
+      <section class="mutazioni-section" id="sellato">
+        <h2>16. Sellato / Sellato con calotta</h2>
+        <p>Dorso pigmentato, ventre chiaro; eventuale calotta scura regolare.</p>
+      </section>
+
+      <section class="mutazioni-section" id="altre-combinazioni">
+        <h2>17. Combinazioni – Ciuffato, Arricciato</h2>
+        <p>Valutati per armonia complessiva e chiarezza del carattere.</p>
+      </section>
+
+    </div>
+
+    <!-- COLONNA IMMAGINE -->
+    <div class="mutazioni-side">
+      <img src="img/mutazioni/pdj.jpg" class="mutazione-img" alt="Passero del Giappone">
+    </div>
+
+  </div>
+</div>
