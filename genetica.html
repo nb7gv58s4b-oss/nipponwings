@@ -6,48 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Descrizione tecnica delle mutazioni del Passero del Giappone (Lonchura striata domestica) secondo lo standard FOI, a cura di Nippon Wings.">
 
-  <!-- Font moderna -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --nw-bg: #f5f5f4;
-      --nw-card: #ffffff;
-      --nw-text: #111827;
-      --nw-muted: #6b7280;
-      --nw-accent: #b91c1c;
-      --nw-accent-soft: #fee2e2;
-      --nw-border: #e5e7eb;
-      --nw-note-bg: #fef3c7;
-      --nw-note-border: #f59e0b;
-    }
-
     * {
       box-sizing: border-box;
     }
 
     body {
-      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
       margin: 0;
       padding: 0;
-      color: var(--nw-text);
-      background-color: var(--nw-bg);
+      line-height: 1.6;
     }
 
     .nw-container {
       max-width: 960px;
       margin: 0 auto;
       padding: 1.5rem;
-      background-color: var(--nw-card);
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
     }
 
     h1, h2, h3 {
       line-height: 1.3;
-      font-weight: 600;
+      margin-top: 0;
     }
 
     h1 {
@@ -67,14 +45,6 @@
       font-size: 1rem;
     }
 
-    .nw-intro {
-      border-left: 4px solid var(--nw-accent);
-      padding-left: 1rem;
-      margin: 1rem 0 2rem;
-      font-size: 0.95rem;
-      color: var(--nw-muted);
-    }
-
     p {
       margin: 0.25rem 0 0.75rem;
     }
@@ -91,14 +61,14 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       border-radius: 999px;
-      background-color: var(--nw-accent-soft);
-      color: var(--nw-accent);
+      border: 1px solid currentColor;
+      opacity: 0.8;
       margin-bottom: 0.5rem;
     }
 
     .nw-section {
       padding: 1.25rem 0;
-      border-bottom: 1px solid var(--nw-border);
+      border-bottom: 1px solid #dddddd;
     }
 
     .nw-section:last-of-type {
@@ -106,47 +76,48 @@
     }
 
     .nw-meta {
-      font-size: 0.85rem;
-      color: var(--nw-muted);
+      font-size: 0.9rem;
+      opacity: 0.8;
       margin-bottom: 1rem;
+    }
+
+    .nw-intro {
+      border-left: 4px solid #cccccc;
+      padding-left: 1rem;
+      margin: 1rem 0 2rem;
+      font-size: 0.95rem;
     }
 
     .nw-note {
       font-size: 0.85rem;
-      color: #92400e;
-      background: var(--nw-note-bg);
-      border-left: 3px solid var(--nw-note-border);
+      border-left: 3px solid #cccccc;
       padding: 0.6rem 0.75rem;
       margin: 1.5rem 0 0.5rem;
+      background: #f8f8f8;
     }
 
     .nw-image-box {
       width: 100%;
       max-width: 360px;
       aspect-ratio: 4 / 3;
-      border: 2px dashed var(--nw-border);
+      border: 2px dashed #cccccc;
       border-radius: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.8rem;
-      color: var(--nw-muted);
-      background: #f9fafb;
-      margin: 0.5rem 0 1rem;
       text-align: center;
       padding: 0.5rem;
+      margin: 0.5rem 0 1rem;
     }
 
     .nw-image-box span strong {
-      color: var(--nw-accent);
       font-weight: 600;
     }
 
     @media (max-width: 600px) {
       .nw-container {
         padding: 1rem;
-        border-radius: 0;
-        box-shadow: none;
       }
 
       h1 {
