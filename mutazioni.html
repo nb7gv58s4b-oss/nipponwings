@@ -7,42 +7,42 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    /* Layout testo + immagine a destra */
     .mutazioni-wrapper {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
-  gap: 2rem;
-  align-items: flex-start;
-}
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
 
-.mutazioni-side {
-  position: relative;  /* <-- si muove insieme alla pagina */
-  top: 0;
-}
+    .mutazioni-content {
+      width: 100%;
+    }
 
-.mutazione-img {
-  width: 100%;
-  max-width: 360px;
-  border-radius: 1rem;
-  border: 1px solid #ccc;
-  display: block;
-  object-fit: contain;
-}
+    .mutazioni-side {
+      position: relative; /* l'immagine scorre con la pagina */
+      top: 0;
+    }
 
-@media (max-width: 900px) {
-  .mutazioni-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .mutazioni-side {
-    position: static;
-    margin-top: 1rem;
-  }
-  
-      }
+    .mutazione-img {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      border-radius: 1rem;
+      border: 1px solid #cccccc;
+      display: block;
+      object-fit: contain;
+    }
+
+    .mutazione-img-caption {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
     }
 
     .mutazioni-section {
       padding: 1.2rem 0;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #dddddd;
     }
     .mutazioni-section:last-of-type {
       border-bottom: none;
@@ -53,26 +53,63 @@
     }
 
     .mutazioni-section h3 {
-      margin-top: 1rem;
-      margin-bottom: 0.2rem;
+      margin-top: 0.8rem;
+      margin-bottom: 0.25rem;
       font-size: 1rem;
     }
 
+    .mutazioni-section p {
+      margin: 0.25rem 0 0.6rem;
+    }
+
+    .mutazioni-section ul {
+      margin: 0.15rem 0 0.6rem 1.2rem;
+      padding: 0;
+    }
+
     .mutazioni-index {
-      padding: 1rem;
-      border: 1px solid #ddd;
-      background: #f8f8f8;
+      padding: 0.9rem 1rem;
       border-radius: 0.5rem;
+      border: 1px solid #dddddd;
+      background: #f8f8f8;
       margin-bottom: 1.8rem;
+      font-size: 0.95rem;
+    }
+
+    .mutazioni-index h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
     }
 
     .mutazioni-index ul {
-      columns: 2;
+      margin: 0;
       padding-left: 1.2rem;
+      columns: 2;
+      column-gap: 2rem;
     }
 
-    @media(max-width: 650px){
-      .mutazioni-index ul { columns: 1; }
+    .mutazioni-index li {
+      margin-bottom: 0.2rem;
+    }
+
+    .mutazioni-note {
+      font-size: 0.85rem;
+      border-left: 3px solid #cccccc;
+      padding: 0.6rem 0.9rem;
+      margin-top: 1.5rem;
+      background: #f8f8f8;
+    }
+
+    @media (max-width: 900px) {
+      .mutazioni-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .mutazioni-side {
+        margin-top: 1rem;
+      }
+      .mutazioni-index ul {
+        columns: 1;
+      }
     }
   </style>
 </head>
@@ -96,186 +133,362 @@
 
 <div class="container">
 
-<div class="mutazioni-wrapper">
+  <div class="mutazioni-wrapper">
 
-  <!-- COLONNA TESTO -->
-  <div class="mutazioni-content">
+    <!-- COLONNA SINISTRA: TESTO -->
+    <div class="mutazioni-content">
 
-    <h2>Mutazioni del Passero del Giappone – Standard FOI Completo</h2>
-    <p class="mutazioni-meta">
-      Elenco tecnico ed esteso delle mutazioni FOI riconosciute nel Passero del Giappone
-      (<em>Lonchura striata domestica</em>), con descrizione dettagliata dello standard
-      e difetti da penalizzare in mostra.
-    </p>
+      <h2>Mutazioni del Passero del Giappone – Standard FOI</h2>
+      <p>
+        Panoramica completa delle principali mutazioni riconosciute nel
+        <strong>Passero del Giappone (Lonchura striata domestica)</strong>, con
+        indicazione sintetica dello standard FOI e dei principali difetti da
+        penalizzare in esposizione.
+      </p>
 
-    <!-- Indice -->
-    <section class="mutazioni-index">
-      <h3>Indice Mutazioni</h3>
-      <ul>
-        <li>Nero Bruno</li>
-        <li>Moka Bruno</li>
-        <li>Rosso Bruno</li>
-        <li>Bianco</li>
-        <li>Serie Grigio</li>
-        <li>Serie Pastello</li>
-        <li>Ali Chiare</li>
-        <li>Serie Ino</li>
-        <li>Serie Perla</li>
-        <li>Scudati</li>
-        <li>Ciuffati</li>
-        <li>Arricciato</li>
-        <li>Albino</li>
-      </ul>
-    </section>
+      <section class="mutazioni-index">
+        <h3>Indice mutazioni</h3>
+        <ul>
+          <li>Parametri generali</li>
+          <li>Nero bruno (ancestrale)</li>
+          <li>Moka bruno</li>
+          <li>Rosso bruno</li>
+          <li>Bianco (occhi neri / occhi rossi)</li>
+          <li>Serie grigio (nero grigio, moka grigio, rosso grigio)</li>
+          <li>Serie pastello</li>
+          <li>Ali chiare</li>
+          <li>Serie ino</li>
+          <li>Serie perla</li>
+          <li>Scudati / sellati</li>
+          <li>Ciuffati</li>
+          <li>Arricciato</li>
+          <li>Albino</li>
+        </ul>
+      </section>
 
-    <!-- MUTAZIONI COMPLETE -->
+      <!-- PARAMETRI GENERALI -->
+      <section class="mutazioni-section" id="parametri-generali">
+        <h2>Parametri generali di standard FOI</h2>
+        <p>Valgono per tutte le mutazioni, indipendentemente dal colore.</p>
+        <ul>
+          <li><strong>Taglia:</strong> 11–12 cm, corpo compatto e ben proporzionato.</li>
+          <li><strong>Forma:</strong> petto pieno, dorso leggermente arcuato, linea armoniosa.</li>
+          <li><strong>Testa:</strong> rotonda, fronte piena, proporzionata al corpo.</li>
+          <li><strong>Becco:</strong> conico, forte, ben chiuso, senza deformazioni.</li>
+          <li><strong>Piumaggio:</strong> serrato, lucido, perfettamente aderente al corpo.</li>
+          <li><strong>Portamento:</strong> vivace ma tranquillo, 45–60° sul posatoio.</li>
+          <li><strong>Condizioni:</strong> soggetto sano, pulito, unghie curate, anello regolare.</li>
+        </ul>
+      </section>
 
-<section class="mutazioni-section">
-  <h2>NERO BRUNO (Ancestrale)</h2>
-  <p><strong>Standard FOI:</strong> Colore bruno scurissimo caldo, quasi nero. Bavaglio evidente e uniforme. Testa leggermente più intensa del dorso.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Bruno slavato o troppo chiaro</li>
-    <li>Piumaggio opaco</li>
-    <li>Taglia ridotta</li>
-    <li>Macchie o irregolarità nel bavaglio</li>
-  </ul>
-</section>
+      <!-- NERO BRUNO -->
+      <section class="mutazioni-section" id="nero-bruno">
+        <h2>Nero bruno (varietà ancestrale)</h2>
+        <p><strong>Serie:</strong> bruno – varietà di base da cui si valutano tutte le altre.</p>
 
-<section class="mutazioni-section">
-  <h2>MOKA BRUNO</h2>
-  <p><strong>Standard FOI:</strong> Bruno cioccolato chiaro ed uniforme. La componente nera è ridotta, conferendo una tonalità più calda.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Toni troppo chiari o tendenti al cannella</li>
-    <li>Disomogeneità del colore</li>
-  </ul>
-</section>
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Colore di fondo:</strong> bruno molto scuro, caldo, tendente al nero.</li>
+          <li><strong>Dorso, ali e coda:</strong> uniformemente brunoscuro, senza penne chiare.</li>
+          <li><strong>Testa e petto:</strong> leggermente più intensi, con buona brillantezza.</li>
+          <li><strong>Bavaglio:</strong> evidente, regolare, ben delimitato.</li>
+          <li><strong>Ventre e sottocoda:</strong> bruno-beige più chiaro, mai bianco puro.</li>
+          <li><strong>Becco:</strong> grigio corneo scuro.</li>
+          <li><strong>Occhi:</strong> neri.</li>
+          <li><strong>Zampe:</strong> carnicino leggermente scurito, uniforme.</li>
+        </ul>
 
-<section class="mutazioni-section">
-  <h2>ROSSO BRUNO</h2>
-  <p><strong>Standard FOI:</strong> Forte presenza di feomelanina. Corpo rossiccio caldo e ventre crema caldo.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Tonalità giallastre o troppo smorte</li>
-    <li>Occhi scuri anziché rubino</li>
-  </ul>
-</section>
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Bruno troppo chiaro o slavato.</li>
+          <li>Piumaggio opaco, arruffato o con penne rotte.</li>
+          <li>Bavaglio irregolare, spezzato o poco visibile.</li>
+          <li>Presenza di penne chiare o macchie nel dorso/ali.</li>
+        </ul>
+      </section>
 
-<section class="mutazioni-section">
-  <h2>BIANCO (Occhi Neri / Occhi Rossi)</h2>
-  <p><strong>Standard FOI:</strong> Assenza totale o quasi totale di pigmento. Piumaggio bianco pulito.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Macchie grigie o crema</li>
-    <li>Occhi neri quando dovrebbero essere rossi</li>
-  </ul>
-</section>
+      <!-- MOKA BRUNO -->
+      <section class="mutazioni-section" id="moka-bruno">
+        <h2>Moka bruno</h2>
+        <p><strong>Serie:</strong> bruno – mutazione recessiva di schiarimento del nero bruno.</p>
 
-<section class="mutazioni-section">
-  <h2>SERIE GRIGIO (Nero Grigio, Moka Grigio, Rosso Grigio)</h2>
-  <p><strong>Standard FOI:</strong> Piumaggio grigio uniforme, freddo o caldo a seconda della serie di origine.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Influenze brune (contaminazioni)</li>
-    <li>Macchie chiare o irregolarità</li>
-  </ul>
-</section>
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Colore di fondo:</strong> bruno cioccolato caldo, uniforme.</li>
+          <li><strong>Dorso e ali:</strong> senza chiazze più scure o più chiare.</li>
+          <li><strong>Testa:</strong> stesso tono del dorso, senza stacchi netti.</li>
+          <li><strong>Bavaglio:</strong> presente e riconoscibile, appena più intenso.</li>
+          <li><strong>Ventre:</strong> bruno più chiaro ma sempre caldo.</li>
+          <li><strong>Becco:</strong> corneo medio, più chiaro dell’ancestrale.</li>
+          <li><strong>Occhi:</strong> neri.</li>
+        </ul>
 
-<section class="mutazioni-section">
-  <h2>SERIE PASTELLO</h2>
-  <p><strong>Standard FOI:</strong> Diluizione omogenea della melanina. Aspetto morbido e pulito.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Diluizione eccessiva fino al quasi bianco</li>
-    <li>Piumaggio sporco o macchiato</li>
-  </ul>
-</section>
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Tono troppo chiaro tendente al cannella spento.</li>
+          <li>Colorazione disomogenea con macchie o striature.</li>
+          <li>Bavaglio assente o quasi invisibile.</li>
+        </ul>
+      </section>
 
-<section class="mutazioni-section">
-  <h2>ALI CHIARE</h2>
-  <p><strong>Standard FOI:</strong> Remiganti e copritrici notevolmente schiarite, contrasto armonioso col dorso.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Ai troppo simili al dorso</li>
-    <li>Macchie d’ombra irregolari</li>
-  </ul>
-</section>
+      <!-- ROSSO BRUNO -->
+      <section class="mutazioni-section" id="rosso-bruno">
+        <h2>Rosso bruno</h2>
+        <p><strong>Serie:</strong> rosso bruno – forte componente feomelanica.</p>
 
-<section class="mutazioni-section">
-  <h2>SERIE INO</h2>
-  <p><strong>Standard FOI:</strong> Eumelanina quasi totalmente assente. Piumaggio crema chiarissimo, occhi rubino.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Residui di melaninizzazione</li>
-    <li>Occhi troppo scuri</li>
-  </ul>
-</section>
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Colore di fondo:</strong> rosso-bruno caldo, intenso e uniforme.</li>
+          <li><strong>Testa e petto:</strong> tonalità rossiccia marcata, senza zone spente.</li>
+          <li><strong>Ventre:</strong> crema caldo, leggermente feomelanico, senza strappi bianchi.</li>
+          <li><strong>Becco:</strong> bruno corneo chiaro.</li>
+          <li><strong>Occhi:</strong> rubino scuro, specialmente nei soggetti giovani.</li>
+        </ul>
 
-<section class="mutazioni-section">
-  <h2>SERIE PERLA</h2>
-  <p><strong>Standard FOI:</strong> Perlatura evidente e uniforme su dorso e ali, con perle tonde e regolari.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Perle irregolari</li>
-    <li>Distribuzione incompleta</li>
-  </ul>
-</section>
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Tendenza al giallastro o al mattone opaco.</li>
+          <li>Occhi completamente neri (perdita del carattere).</li>
+          <li>Ventre troppo chiaro o bianco.</li>
+        </ul>
+      </section>
 
-<section class="mutazioni-section">
-  <h2>SCUDATI</h2>
-  <p><strong>Standard FOI:</strong> Dorso pigmentato e ventre chiaro con separazione netta, effetto “scudo”.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Bordi frastagliati</li>
-    <li>Eccessivo bianco o macchie sparse</li>
-  </ul>
-</section>
+      <!-- BIANCO -->
+      <section class="mutazioni-section" id="bianco">
+        <h2>Bianco (occhi neri / occhi rossi)</h2>
+        <p><strong>Serie:</strong> mutazioni di assenza di pigmento, distinte dall’albino classico.</p>
 
-<section class="mutazioni-section">
-  <h2>CIUFFATI</h2>
-  <p><strong>Standard FOI:</strong> Ciuffo ben formato, centrato, arrotondato.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Ciuffo disordinato o incompleto</li>
-    <li>Ciuffo laterale o asimmetrico</li>
-  </ul>
-</section>
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Piumaggio:</strong> bianco uniforme su tutto il corpo.</li>
+          <li><strong>Bianco occhi neri:</strong> piumaggio bianco, occhi neri, becco e zampe da carnicino a corneo chiaro.</li>
+          <li><strong>Bianco occhi rossi / apigmentato:</strong> piumaggio bianco o leggermente avorio, occhi rosso rubino.</li>
+        </ul>
 
-<section class="mutazioni-section">
-  <h2>ARRICCIATO</h2>
-  <p><strong>Standard FOI:</strong> Arricciature armoniose, simmetriche, non compromettenti la forma del corpo.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Arricciature caotiche</li>
-    <li>Penna rotta o mancante</li>
-  </ul>
-</section>
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Macchie grigie, crema o brune nel piumaggio.</li>
+          <li>Occhi scuri in soggetti che dovrebbero essere a occhi rossi.</li>
+          <li>Piumaggio sporco o ingiallito.</li>
+        </ul>
+      </section>
 
-<section class="mutazioni-section">
-  <h2>ALBINO</h2>
-  <p><strong>Standard FOI:</strong> Bianco puro, uniforme, occhi rosso intenso, totale assenza di pigmento.</p>
-  <h3>Difetti da penalizzare</h3>
-  <ul>
-    <li>Tonalità crema</li>
-    <li>Occhi troppo scuri</li>
-  </ul>
-</section>
+      <!-- SERIE GRIGIO -->
+      <section class="mutazioni-section" id="serie-grigio">
+        <h2>Serie grigio (nero grigio, moka grigio, rosso grigio)</h2>
+        <p><strong>Serie:</strong> diluizione della componente nera o bruna con viraggio verso il grigio.</p>
+
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Nero grigio:</strong> grigio antracite freddo, uniforme; bavaglio leggermente più intenso ma non nero.</li>
+          <li><strong>Moka grigio:</strong> grigio-bruno “cenere calda”, molto uniforme su dorso e ali.</li>
+          <li><strong>Rosso grigio:</strong> grigio caldo con componente rossiccia diffusa, armoniosa.</li>
+          <li><strong>Ventre:</strong> più chiaro (grigio-perla o grigio-crema), raccordato al colore di fondo.</li>
+          <li><strong>Becco:</strong> grigio corneo da medio a chiaro.</li>
+          <li><strong>Occhi:</strong> neri o nero-rubino secondo la serie di partenza.</li>
+        </ul>
+
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Presenza di tonalità brune calde nel nero grigio.</li>
+          <li>Macchie o zone irregolari più chiare o più scure.</li>
+          <li>Ventre quasi bianco con stacco netto dal dorso.</li>
+        </ul>
+      </section>
+
+      <!-- SERIE PASTELLO -->
+      <section class="mutazioni-section" id="pastello">
+        <h2>Serie pastello</h2>
+        <p><strong>Serie:</strong> mutazione di diluizione della melanina, applicabile alle diverse serie di colore.</p>
+
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Colore di fondo:</strong> schiarito in modo omogeneo rispetto alla serie base (nero, moka, rosso, grigio).</li>
+          <li><strong>Testa, dorso e ali:</strong> stessa tonalità attenuata, senza zone bruciate o troppo scure.</li>
+          <li><strong>Ventre:</strong> ulteriormente schiarito, ma in armonia col resto del corpo.</li>
+          <li><strong>Becco:</strong> leggermente più chiaro del tipo ancestrale.</li>
+          <li><strong>Occhi:</strong> neri.</li>
+        </ul>
+
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Diluizione eccessiva fino al quasi bianco “sporco”.</li>
+          <li>Colorazione disomogenea con macchie più scure.</li>
+          <li>Assenza quasi completa di contrasto e lettura del tipo.</li>
+        </ul>
+      </section>
+
+      <!-- ALI CHIARE -->
+      <section class="mutazioni-section" id="ali-chiare">
+        <h2>Ali chiare</h2>
+        <p><strong>Serie:</strong> mutazione di disegno applicabile a tutte le serie di colore.</p>
+
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Ali:</strong> chiaramente più chiare del dorso, remiganti e copritrici diluite ma uniformi.</li>
+          <li><strong>Dorso e testa:</strong> colore pieno della serie di base.</li>
+          <li><strong>Transizione:</strong> passaggio dolce e armonioso tra dorso e ali, senza bordi frastagliati.</li>
+        </ul>
+
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Ali quasi uguali al dorso (carattere poco evidente).</li>
+          <li>Macchie scure irregolari sulle ali.</li>
+          <li>Ali eccessivamente sbiancate, con perdita della lettura di mutazione di base.</li>
+        </ul>
+      </section>
+
+      <!-- SERIE INO -->
+      <section class="mutazioni-section" id="ino">
+        <h2>Serie ino</h2>
+        <p><strong>Serie:</strong> mutazione di forte diluizione con abolizione quasi totale dell’eumelanina.</p>
+
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Colore di fondo:</strong> crema molto chiaro, quasi avorio, uniforme.</li>
+          <li><strong>Disegno:</strong> pressoché assente, solo eventualmente ombre molto leggere.</li>
+          <li><strong>Becco:</strong> carnicino o corneo molto chiaro.</li>
+          <li><strong>Occhi:</strong> rosso rubino evidente.</li>
+          <li><strong>Zampe:</strong> carnicine chiare.</li>
+        </ul>
+
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Presenza di zone grigie o brune ancora molto visibili.</li>
+          <li>Occhi troppo scuri o neri.</li>
+          <li>Piumaggio con evidente tendenza al giallastro sporco.</li>
+        </ul>
+      </section>
+
+      <!-- SERIE PERLA -->
+      <section class="mutazioni-section" id="perla">
+        <h2>Serie perla</h2>
+        <p><strong>Serie:</strong> mutazione di disegno su base bruna o grigia.</p>
+
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Colore di fondo:</strong> bruno o grigio secondo la serie di base.</li>
+          <li><strong>Perlatura:</strong> macchiettatura chiara regolare su dorso e ali, perle di dimensioni simili.</li>
+          <li><strong>Testa:</strong> più uniforme, con perlatura meno accentuata.</li>
+          <li><strong>Becco e occhi:</strong> come nella serie di partenza.</li>
+        </ul>
+
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Perle troppo grandi o irregolari.</li>
+          <li>Perlatura presente solo in alcune zone, forte asimmetria.</li>
+          <li>Effetto “pezzato sporco” senza un vero disegno perlato.</li>
+        </ul>
+      </section>
+
+      <!-- SCUDATI / SELLATI -->
+      <section class="mutazioni-section" id="scudati">
+        <h2>Scudati / sellati</h2>
+        <p><strong>Serie:</strong> mutazione di disegno, con netta separazione tra parte pigmentata e parte chiara.</p>
+
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Dorso e ali:</strong> pigmentati secondo la serie di colore.</li>
+          <li><strong>Ventre e parte del petto:</strong> chiari o bianchi, con effetto “scudo” o “sella”.</li>
+          <li><strong>Linea di separazione:</strong> netta ma regolare, senza sbavature.</li>
+          <li><strong>Scudato con calotta:</strong> presenza di calotta pigmentata centrata e arrotondata sulla testa.</li>
+        </ul>
+
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Bordi frastagliati o irregolari tra zona chiara e scura.</li>
+          <li>Macchie isolate nella parte chiara o nella parte scura.</li>
+          <li>Calotta sbilenca, troppo estesa o non centrata.</li>
+        </ul>
+      </section>
+
+      <!-- CIUFFATI -->
+      <section class="mutazioni-section" id="ciuffati">
+        <h2>Ciuffati</h2>
+        <p><strong>Serie:</strong> mutazione strutturale del piumaggio a livello della testa.</p>
+
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Ciuffo:</strong> ben formato, pieno, arrotondato e centrato sulla sommità del capo.</li>
+          <li><strong>Direzione delle penne:</strong> regolare, senza vortici disordinati.</li>
+          <li><strong>Restante piumaggio:</strong> conforme alla serie di colore di base, ben aderente.</li>
+        </ul>
+
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Ciuffo incompleto, aperto o frammentato.</li>
+          <li>Ciuffo laterale o fortemente asimmetrico.</li>
+          <li>Zone glabre o con piume spezzate alla base del ciuffo.</li>
+        </ul>
+      </section>
+
+      <!-- ARRICCIATO -->
+      <section class="mutazioni-section" id="arricciato">
+        <h2>Arricciato</h2>
+        <p><strong>Serie:</strong> mutazione del piumaggio che interessa porzioni del corpo (dorso, fianchi, petto).</p>
+
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Arricciature:</strong> ben distribuite nelle zone previste, simmetriche, senza eccessi.</li>
+          <li><strong>Impressione generale:</strong> armoniosa, il soggetto rimane ben leggibile e proporzionato.</li>
+          <li><strong>Piumaggio:</strong> non deve ostacolare il portamento né alterare visivamente la taglia.</li>
+        </ul>
+
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Arricciature caotiche o concentrate solo in una piccola zona.</li>
+          <li>Penne spezzate o mancanti nelle aree arricciate.</li>
+          <li>Eccessiva voluminosità che altera la forma generale.</li>
+        </ul>
+      </section>
+
+      <!-- ALBINO -->
+      <section class="mutazioni-section" id="albino">
+        <h2>Albino</h2>
+        <p><strong>Serie:</strong> assenza totale di melanine e feomelanine.</p>
+
+        <h3>Standard FOI</h3>
+        <ul>
+          <li><strong>Piumaggio:</strong> bianco puro, freddo, omogeneo sull’intero soggetto.</li>
+          <li><strong>Disegno:</strong> totalmente assente.</li>
+          <li><strong>Occhi:</strong> rosso vivo ben evidente.</li>
+          <li><strong>Becco e zampe:</strong> carnicini chiari.</li>
+        </ul>
+
+        <h3>Difetti da penalizzare</h3>
+        <ul>
+          <li>Tonalità crema o avorio marcate nel piumaggio.</li>
+          <li>Tracce di pigmento grigio o bruno.</li>
+          <li>Occhi troppo scuri o tendenti al nero.</li>
+        </ul>
+      </section>
+
+      <div class="mutazioni-note">
+        <strong>Nota Nippon Wings:</strong> Le descrizioni sopra riportate sono una sintesi tecnica
+        pensata per l’allevamento e lo studio delle mutazioni. Per la partecipazione a mostre
+        ufficiali si raccomanda sempre di fare riferimento all’ultima versione dei regolamenti FOI
+        e alle schede standard aggiornate.
+      </div>
+
+    </div>
+
+    <!-- COLONNA DESTRA: IMMAGINE -->
+    <aside class="mutazioni-side">
+      <img src="mutazioni standard.jpg" class="mutazione-img"
+           alt="Illustrazione mutazioni Passero del Giappone Nippon Wings" />
+      <p class="mutazione-img-caption">
+        Schema illustrato delle principali mutazioni del Passero del Giappone.
+      </p>
+    </aside>
+
+  </div>
 
 </div>
-
-<!-- IMMAGINE A DESTRA -->
-<div class="mutazioni-side">
-  <img src="standard mutazioni.jpg" class="mutazione-img" alt="Mutazioni Passero del Giappone Nippon Wings">
-</div>
-
-</div><!-- fine wrapper -->
-
-</div><!-- fine container -->
 
 <footer>
-  © 2025 · Nippon Wings · Allevamento Amatoriale Passero del Giappone
+  © 2025 · Nippon Wings · Allevamento Amatoriale Passero del Giappone Nero Grigio
 </footer>
 
 </body>
 </html>
+
