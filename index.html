@@ -1,170 +1,294 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <title>Nippon Wings · Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nippon Wings - Passero del Giappone Nero Grigio</title>
 
-  <!-- CSS generale del sito (adatta il percorso se necessario) -->
-  <link rel="stylesheet" href="/nipponwings/assets/css/style.css">
+  <!-- Se nel tuo sito usi altri font/link, sostituisci questo blocco con quello di allevamento.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS principale del sito -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container-lg px-3 my-5 markdown-body">
+  <!-- HEADER / NAVBAR -->
+  <header class="main-header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <!-- Controlla il percorso del logo -->
+        <img src="img/logo-nippon-wings.png" alt="Nippon Wings - Logo" class="logo-img" />
+      </a>
 
-    <!-- Logo + intestazione (stile simile ad allevamento.html) -->
-    <p>
-      <img src="logo.png" alt="Logo Nippon Wings">
-    </p>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="allevamento.html">Allevamento</a></li>
+          <li><a href="genetica.html">Genetica &amp; Mutazioni</a></li>
+          <li><a href="galleria.html">Galleria</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <h1>Nippon Wings</h1>
-    <p>Allevamento Amatoriale Passero del Giappone Nero Grigio</p>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Nippon Wings</h1>
+          <p class="hero-subtitle">
+            Allevamento amatoriale dedicato alla
+            <strong>Lonchura striata domestica</strong>,
+            con particolare specializzazione nella mutazione
+            <strong>Passero del Giappone Nero Grigio</strong>.
+          </p>
+          <p>
+            Selezione ragionata, gestione tecnica dell’ambiente di allevamento
+            e attenzione costante alla tipicità dei soggetti, in linea con gli
+            standard ornitologici moderni.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <!-- Menu come nelle altre pagine -->
-    <p>
-      <a href="index.html">Home</a> ·
-      <a href="allevamento.html">Allevamento</a> ·
-      <a href="mutazioni.html">Mutazioni</a> ·
-      <a href="galleria.html">Galleria</a> ·
-      <a href="shop.html">Shop</a> ·
-      <a href="contatti.html">Contatti</a>
-    </p>
+    <!-- CENNI SULL'ALLEVAMENTO -->
+    <section class="section" id="cenni-allevamento">
+      <div class="container section-grid">
+        <div>
+          <h2>Cenni sul mio allevamento</h2>
+          <p>
+            Nippon Wings è un allevamento amatoriale focalizzato quasi
+            esclusivamente sul <strong>Passero del Giappone Nero Grigio</strong>.
+            L’obiettivo principale è costruire nel tempo una linea selezionata
+            che unisca:
+          </p>
+          <ul class="icon-list">
+            <li><strong>Tipicità di forma</strong> e buona struttura del soggetto</li>
+            <li><strong>Disegno ventrale</strong> il più possibile pulito e leggibile</li>
+            <li><strong>Equilibrio di eumelanina/feomelanina</strong> tipico del Nero Grigio</li>
+            <li><strong>Carattere docile</strong> e buona attitudine riproduttiva</li>
+          </ul>
+          <p>
+            Le coppie sono gestite in gabbie da riproduzione dedicate, con
+            <strong>illuminazione LED controllata</strong>, monitoraggio di
+            <strong>temperatura e umidità</strong> e un piano alimentare che
+            differenzia mantenimento, pre-cova, cova e svezzamento.
+          </p>
+        </div>
 
-    <!-- CONTENUTO ORIGINALE DELLA HOME: SOLO STORIA TECNICA -->
-    <h2>Storia Tecnica e Completa del Passero del Giappone</h2>
+        <div>
+          <h3>Approccio di lavoro</h3>
+          <p>
+            Ogni stagione riproduttiva viene documentata tramite
+            <strong>schede di allevamento</strong>, dove annoto:
+          </p>
+          <ul class="icon-list">
+            <li>numero di anello di maschi, femmine e giovani</li>
+            <li>mutazioni, portatori e combinazioni utilizzate</li>
+            <li>risultati delle cove (nati, svezzati, soggetti scartati)</li>
+            <li>note su comportamento, attitudine alla cova e alla balia</li>
+          </ul>
+          <p>
+            Questo permette di seguire l’evoluzione del ceppo Nero Grigio nel
+            tempo e correggere la selezione di generazione in generazione.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      Il Passero del Giappone (Lonchura striata domestica) è una delle specie domestiche più antiche e significative dell’ornitologia mondiale. 
-      La sua storia attraversa oltre tre secoli di selezione mirata, trasformandolo da gruppo di piccoli Estrildidi selvatici a una delle forme domestiche più stabili, affidabili e tecnicamente raffinate mai ottenute dall’uomo.
-    </p>
+    <!-- STORIA DELLA SELEZIONE + TIMELINE -->
+    <section class="section section-alt" id="storia-selezione">
+      <div class="container">
+        <h2>Storia della selezione del Passero del Giappone</h2>
 
-    <h3>Origini antiche della domesticazione (1600–1700)</h3>
+        <h3>Origine e domesticazione</h3>
+        <p>
+          Il <strong>Passero del Giappone</strong>
+          (<em>Lonchura striata domestica</em>) è una forma domestica derivata
+          dalla <strong>Lonchura striata</strong> selvatica
+          (white-rumped munia), originaria dell’Asia tropicale.
+          La specie domestica non esiste in natura: è il risultato di
+          <strong>secoli di allevamento e selezione in cattività</strong>.
+        </p>
+        <p>
+          Storicamente, i primi ceppi vennero fissati tra Cina e Giappone,
+          a partire da soggetti di <em>Lonchura striata</em> importati e
+          allevati per la loro docilità e capacità riproduttiva. In Giappone,
+          tra XVIII e XIX secolo, si consolidano le prime linee “domestiche”
+          con caratteristiche ben diverse dalla specie selvatica:
+        </p>
+        <ul class="icon-list">
+          <li><strong>aumento della socialità</strong> e minore paura dell’uomo;</li>
+          <li><strong>maggiore attitudine alla cova</strong> e cura dei piccoli;</li>
+          <li><strong>variazioni del piumaggio</strong>, inizialmente su base bruna;</li>
+          <li><strong>struttura più massiccia</strong> rispetto alla munia selvatica.</li>
+        </ul>
+        <p>
+          Dalla seconda metà dell’Ottocento il Passero del Giappone arriva
+          in Europa come uccello da gabbia, diffondendosi rapidamente negli
+          allevamenti grazie alla facilità di riproduzione e al ruolo di
+          <strong>“balia”</strong> per altre specie di estrildidi più delicate.
+          Parallelamente, allevatori europei e successivamente americani
+          iniziano una selezione mirata sia sul colore, sia sulla forma.
+        </p>
 
-    <p>
-      Tra la fine del XVII secolo e l’inizio del XVIII, in Cina, Giappone e alcune regioni del Sud-est asiatico si sviluppò l’allevamento di diverse specie del genere 
-      <em>Lonchura</em>. Le specie maggiormente coinvolte furono:
-    </p>
+        <h3>Selezione moderna e standard</h3>
+        <p>
+          Nel corso del Novecento vengono fissate numerose mutazioni di
+          colore (nero bruno, moka bruno, rosso bruno, serie grigia,
+          mutazioni Ino, Perla, soggetti pezzati, scudati, arricciati, ciuffati)
+          e si affermano standard espositivi internazionali, recepiti anche
+          in ambito FOI/COM.
+        </p>
+        <p>
+          La forma ancestrale di riferimento resta il
+          <strong>nero bruno</strong>, da cui si misurano deviazioni e
+          combinazioni. La tua specializzazione nel
+          <strong>Nero Grigio</strong> si inserisce proprio in questo
+          contesto: una base “grigia” in cui si ricerca il corretto
+          bilanciamento di melanine, il disegno ventrale leggibile e un
+          contrasto netto fra dorsale e parti inferiori.
+        </p>
 
-    <ul>
-      <li><em>Lonchura striata</em> – base genetica principale;</li>
-      <li><em>Lonchura acuticauda</em> – contributo a struttura e portamento;</li>
-      <li><em>Lonchura punctulata</em> – possibili apporti nel comportamento sociale.</li>
-    </ul>
+        <h3>Timeline della selezione del Passero del Giappone</h3>
 
-    <p>
-      Gli allevatori asiatici iniziarono a selezionare i soggetti più docili, quelli che tolleravano meglio la cattività e che si riproducevano più regolarmente. 
-      Questo processo avveniva in piccoli allevamenti familiari, spesso legati anche alla tradizione culturale giapponese della cura degli uccelli.
-    </p>
+        <div class="timeline">
+          <!-- 1700–1800: origine asiatica -->
+          <div class="timeline-item">
+            <div class="timeline-year">XVIII secolo</div>
+            <div class="timeline-content">
+              <h4>Prime forme domestiche in Asia</h4>
+              <p>
+                In Cina e Giappone vengono allevate <em>Lonchura striata</em>
+                selvatiche; attraverso selezione e possibili ibridazioni
+                con altre <em>Lonchura</em> si fissano le prime linee
+                domestiche, più docili e riproduttive.
+              </p>
+            </div>
+          </div>
 
-    <h3>Consolidamento della forma domestica (1700–1800)</h3>
+          <!-- 1860: arrivo in Europa -->
+          <div class="timeline-item">
+            <div class="timeline-year">1860 circa</div>
+            <div class="timeline-content">
+              <h4>Arrivo in Europa</h4>
+              <p>
+                Il Passero del Giappone arriva in Europa come uccello da
+                gabbia. Si diffonde in modo capillare negli allevamenti
+                grazie alla grande facilità di riproduzione e alla capacità
+                di allevare anche i piccoli di altre specie (ruolo di balia).
+              </p>
+            </div>
+          </div>
 
-    <p>
-      Durante il XVIII secolo la selezione divenne più sistematica. In Giappone, in particolare, l’allevamento degli Estrildidi era considerato una forma di arte domestica. 
-      Gli allevatori perfezionarono la scelta dei soggetti privilegiando:
-    </p>
+          <!-- 1900-1950 -->
+          <div class="timeline-item">
+            <div class="timeline-year">Inizio XX secolo</div>
+            <div class="timeline-content">
+              <h4>Selezione di base: forma e temperamento</h4>
+              <p>
+                Gli allevatori lavorano soprattutto su robustezza,
+                fertilità, istinto alla cova e struttura generale del soggetto.
+                In questa fase si consolidano i ceppi che diventeranno
+                fondamentali per la selezione moderna.
+              </p>
+            </div>
+          </div>
 
-    <ul>
-      <li>sociabilità e comportamento di gruppo;</li>
-      <li>capacità di allevare i piccoli senza difficoltà;</li>
-      <li>resistenza alle variazioni climatiche;</li>
-      <li>riproducibilità costante in ambiente controllato.</li>
-    </ul>
+          <!-- 1950-1980: mutazioni colore -->
+          <div class="timeline-item">
+            <div class="timeline-year">Metà XX secolo</div>
+            <div class="timeline-content">
+              <h4>Esplosione delle mutazioni di colore</h4>
+              <p>
+                Entrano in gioco selezioni specifiche su colore e disegno:
+                nero bruno, moka bruno, rosso bruno, serie dei grigi, mutazioni
+                Ino e Perla, soggetti pezzati e scudati. Si sperimentano anche
+                inserimenti di altre <em>Lonchura</em> per migliorare taglia,
+                qualità del disegno e intensità di colore.
+              </p>
+            </div>
+          </div>
 
-    <p>
-      Fu in questo periodo che si consolidò una popolazione distinta, totalmente domestica, capace di riprodursi regolarmente senza più intervento di individui selvatici. 
-      È questo il vero punto di nascita del moderno Passero del Giappone.
-    </p>
+          <!-- 1993: standard COM/FOI -->
+          <div class="timeline-item">
+            <div class="timeline-year">Anni 1990</div>
+            <div class="timeline-content">
+              <h4>Definizione degli standard espositivi</h4>
+              <p>
+                Le federazioni ornitologiche internazionali codificano gli
+                standard ufficiali per forma, posizione in gabbia, disegno e
+                colorazioni. Il Passero del Giappone entra a pieno titolo
+                nelle mostre ornitologiche come specie da esposizione.
+              </p>
+            </div>
+          </div>
 
-    <h3>Diffusione internazionale e arrivo in Europa (1800–1850)</h3>
+          <!-- 2000+ ricerca scientifica -->
+          <div class="timeline-item">
+            <div class="timeline-year">2000 &ndash; oggi</div>
+            <div class="timeline-content">
+              <h4>Modello di studio e selezione avanzata</h4>
+              <p>
+                Il Passero del Giappone viene utilizzato anche come
+                <strong>modello di ricerca</strong> per lo studio del
+                canto, della domesticazione e della genetica.
+                Parallelamente, negli allevamenti specializzati si affinano
+                le linee dedicate a singole mutazioni (come il
+                <strong>Nero Grigio</strong>), lavorando su:
+              </p>
+              <ul>
+                <li>precisione del disegno ventrale;</li>
+                <li>uniformità del dorso e delle ali;</li>
+                <li>stabilità genetica delle linee nel tempo;</li>
+                <li>mantenimento di fertilità, rusticità e carattere sociale.</li>
+              </ul>
+            </div>
+          </div>
 
-    <p>
-      Con l’apertura delle nuove rotte commerciali nel XIX secolo, il Passero del Giappone arrivò nelle principali città europee. 
-      Fu immediatamente apprezzato per:
-    </p>
+          <!-- Presente: Nippon Wings -->
+          <div class="timeline-item timeline-item-current">
+            <div class="timeline-year">Oggi</div>
+            <div class="timeline-content">
+              <h4>Nippon Wings e la selezione Nero Grigio</h4>
+              <p>
+                Il tuo allevamento Nippon Wings si inserisce in questa lunga
+                storia, concentrandosi sulla <strong>mutazione Nero Grigio</strong>.
+                Lavorando su poche linee mirate, con registri di allevamento
+                dettagliati e una gestione tecnica dell’ambiente, l’obiettivo
+                è produrre soggetti che uniscano:
+              </p>
+              <ul>
+                <li>rispetto degli standard cromatici e morfologici;</li>
+                <li>buona attitudine alla riproduzione naturale;</li>
+                <li>carattere equilibrato e socievole;</li>
+                <li>continuità del ceppo nel medio-lungo periodo.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <ul>
-      <li>la sua estrema affidabilità riproduttiva;</li>
-      <li>la docilità, rara negli Estrildidi selvatici;</li>
-      <li>l’utilità come balia per Diamanti di Gould, Amadine e Lonchure più sensibili.</li>
-    </ul>
-
-    <p>
-      Entro pochi decenni divenne una delle specie più allevate in Europa, contribuendo allo sviluppo dell’ornitologia moderna.
-    </p>
-
-    <h3>Sviluppo della selezione morfologica (1900–1950)</h3>
-
-    <p>
-      All’inizio del XX secolo iniziò la selezione moderna basata su criteri morfologici. 
-      Gli allevatori europei e asiatici iniziarono a definire e stabilizzare:
-    </p>
-
-    <ul>
-      <li>struttura compatta e ben proporzionata;</li>
-      <li>linea dorsale regolare;</li>
-      <li>testa piena e rotonda;</li>
-      <li>portamento armonioso;</li>
-      <li>piumaggio aderente e serico.</li>
-    </ul>
-
-    <p>
-      Questo fu il periodo in cui il Passero del Giappone iniziò a essere considerato non solo una balia, ma anche un vero e proprio soggetto da selezione.
-    </p>
-
-    <h3>Evoluzione cromatica e mutazioni (1950–2000)</h3>
-
-    <p>
-      A partire dalla metà del secolo scorso iniziarono a comparire numerose mutazioni cromatiche, frutto sia della selezione spontanea sia di accoppiamenti mirati. 
-      Tra queste:
-    </p>
-
-    <ul>
-      <li>Bruno;</li>
-      <li>Pezzato;</li>
-      <li>Bianco;</li>
-      <li>Grigio;</li>
-      <li>Ciuffato (varietà fenotipica);</li>
-      <li>Nero Grigio – una delle più tecniche e apprezzate.</li>
-    </ul>
-
-    <h3>Selezione moderna specializzata (2000–oggi)</h3>
-
-    <p>
-      Nell’ultimo ventennio la selezione del Passero del Giappone ha raggiunto livelli tecnici molto elevati. 
-      La mutazione Nero Grigio si è affermata come una delle più complesse, richiedendo una gestione avanzata delle linee e un monitoraggio costante dei fenotipi:
-    </p>
-
-    <ul>
-      <li>Uniformità cromatica grigio fredda;</li>
-      <li>Mascherina scura definita e stabile;</li>
-      <li>Piumaggio compatto e serico;</li>
-      <li>Portamento elegante e coerente;</li>
-      <li>Assenza di infiltrazioni cromatiche indesiderate;</li>
-      <li>Ottima fertilità per mantenere linee solide.</li>
-    </ul>
-
-    <h3>Timeline cronologica completa</h3>
-
-    <ul>
-      <li><strong>1600–1700:</strong> Inizio della domesticazione in Asia; prime selezioni su docilità e resistenza.</li>
-      <li><strong>1700–1800:</strong> Stabilizzazione della nuova popolazione domestica; nasce la forma base del Passero del Giappone.</li>
-      <li><strong>1800–1850:</strong> Introduzione in Europa; rapida diffusione negli allevamenti occidentali.</li>
-      <li><strong>1850–1900:</strong> Consolidamento del ruolo di balia per molte specie di Estrildidi.</li>
-      <li><strong>1900–1950:</strong> Inizio della selezione morfologica moderna.</li>
-      <li><strong>1950–1975:</strong> Comparsa e diffusione delle principali mutazioni cromatiche.</li>
-      <li><strong>1975–2000:</strong> Sviluppo delle prime linee tecniche di Nero Grigio.</li>
-      <li><strong>2000–oggi:</strong> Selezione altamente specialistica, con standard sempre più precisi.</li>
-    </ul>
-
-    <p>
-      Oggi il Passero del Giappone è considerato un pilastro dell’ornitologia mondiale: completamente domestico, tecnicamente selezionabile, affidabile e 
-      dotato di una storia evolutiva unica per durata e complessità. 
-      La mutazione Nero Grigio rappresenta uno degli apici della selezione moderna, simbolo di eleganza e rigore genetico.
-    </p>
-
-    <!-- FOOTER -->
-    <p>© 2025 · Nippon Wings · Allevamento Amatoriale Passero del Giappone Nero Grigio di Dugo Alessandro</p>
-    <p>Zona Udine · Friuli Venezia Giulia</p>
-
-  </div>
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>
+        Nippon Wings &mdash; Allevamento amatoriale Passero del Giappone Nero Grigio
+      </p>
+      <p class="footer-note">
+        Progetto dedicato alla selezione tecnica della Lonchura striata domestica.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
