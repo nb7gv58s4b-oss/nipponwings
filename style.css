@@ -410,3 +410,80 @@ footer {
     padding: 16px 14px;
   }
 }
+
+/* --- ANIMAZIONI EXTRA --- */
+
+/* Entrata sfalsata delle sezioni nella pagina */
+.container section:nth-of-type(1) {
+  animation-delay: 0.05s;
+}
+
+.container section:nth-of-type(2) {
+  animation-delay: 0.12s;
+}
+
+.container section:nth-of-type(3) {
+  animation-delay: 0.19s;
+}
+
+.container section:nth-of-type(4) {
+  animation-delay: 0.26s;
+}
+
+.container section:nth-of-type(5) {
+  animation-delay: 0.33s;
+}
+
+/* Effetto sollevamento sezioni */
+section {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.16);
+}
+
+/* Hover delicato sul logo */
+.logo-img {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.logo-img:hover {
+  transform: translateY(-2px) scale(1.03);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55));
+}
+
+/* Bottone "torna su" */
+#backToTop {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 30;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#backToTop:hover {
+  transform: translateY(-2px);
+}
+
+#backToTop:active {
+  transform: translateY(0);
+}
