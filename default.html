@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO AUTOMATICI -->
+  {% seo %}
+
+  <!-- STILI -->
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+
+  <!-- FAVICON (opzionale) -->
+  <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="{{ '/logo.png' | relative_url }}" class="logo-img" alt="Logo Nippon Wings" />
+    <h1>Nippon Wings</h1>
+    <p>Allevamento Amatoriale Passero del Giappone Nero Grigio</p>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/storia/' | relative_url }}">Storia</a>
+    <a href="{{ '/mutazioni/' | relative_url }}">Mutazioni</a>
+    <a href="{{ '/genetica/' | relative_url }}">Genetica</a>
+    <a href="{{ '/allevamento/' | relative_url }}">Allevamento</a>
+    <a href="{{ '/galleria/' | relative_url }}">Galleria</a>
+    <a href="{{ '/shop/' | relative_url }}">Shop</a>
+    <a href="{{ '/contatti/' | relative_url }}">Contatti</a>
+  </nav>
+
+  <!-- CONTENUTO DELLA PAGINA -->
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 · Nippon Wings · Allevamento Amatoriale Passero del Giappone Nero Grigio - Dugo Alessandro - Udine - 33100</p>
+    <p><a href="{{ '/faq/' | relative_url }}">FAQ · Domande frequenti</a></p>
+  </footer>
+
+</body>
+</html>
