@@ -1,0 +1,65 @@
+# -------------------------------------------------------
+# SITO / METADATA
+# -------------------------------------------------------
+title: "Nippon Wings"
+description: "Passeri del Giappone di alta selezione – linea nero grigio, allevamento 2.0."
+url: "https://www.nipponwings.it"
+author: "Alessandro Dugo"
+lang: "it-IT"
+
+# FAVICON & ASSETS (opzionale)
+favicon: "/assets/img/favicon.png"
+
+# -------------------------------------------------------
+# BUILD SETTINGS
+# -------------------------------------------------------
+theme: minima   # o il tuo tema attuale
+markdown: kramdown
+
+# Repository GitHub
+repository: dugocraft/nipponwings   # <-- sostituisci se il repo ha un altro nome
+
+# -------------------------------------------------------
+# SEO PLUGIN (indispensabili)
+# -------------------------------------------------------
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# -------------------------------------------------------
+# PERMALINKS (URL PULITI)
+# -------------------------------------------------------
+permalink: /:title/
+
+# -------------------------------------------------------
+# ESCLUSIONE FILE (non indicizzare roba inutile)
+# -------------------------------------------------------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - node_modules/
+  - package.json
+  - package-lock.json
+
+# -------------------------------------------------------
+# DEFAULT SEO SETTINGS per tutte le pagine
+# -------------------------------------------------------
+defaults:
+  -
+    scope:
+      path: ""      # apply to the entire site
+    values:
+      layout: "default"
+      image: "/assets/img/og-default.jpg"   # immagine anteprima social (opzionale)
+      seo:
+        type: "website"
+
+# -------------------------------------------------------
+# PAGINE EXTRA (facoltative)
+# -------------------------------------------------------
+collections:
+  products:
+    output: true
+    permalink: /prodotti/:name/
