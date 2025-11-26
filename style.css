@@ -508,3 +508,26 @@ section:hover {
   object-fit: cover;
   border-radius: 6px;
 }
+
+/* WATERMARK AUTOMATICO SEMPLICE */
+.multi-photo-box img {
+  position: relative;
+}
+
+/* Contenitore invisibile attorno all'immagine */
+.multi-photo-box img {
+  display: block;
+}
+
+/* Aggiunta watermark */
+.multi-photo-box img {
+  -webkit-mask-image: url("logo.png"), linear-gradient(#000, #000);
+  mask-image: url("logo.png"), linear-gradient(#000, #000);
+  -webkit-mask-size: 60px 60px, cover;
+  mask-size: 60px 60px, cover;
+  -webkit-mask-repeat: no-repeat, no-repeat;
+  mask-repeat: no-repeat, no-repeat;
+  -webkit-mask-position: bottom right, center;
+  mask-position: bottom right, center;
+  opacity: 0.95;
+}
