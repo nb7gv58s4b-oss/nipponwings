@@ -5,6 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nippon Wings · Galleria</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* --- SLIDER BASE --- */
+    .slider-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      background: #fff;
+      padding: 16px;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 300px; /* FOTO GRANDI */
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .slide.active {
+      left: 0;
+      opacity: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* --- Frecce slider --- */
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      z-index: 10;
+      user-select: none;
+    }
+
+    .slider-arrow.left {
+      left: 10px;
+    }
+
+    .slider-arrow.right {
+      right: 10px;
+    }
+
+    /* --- Testi della box --- */
+    .slider-box h3 {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .slider-box p {
+      margin-top: 6px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    /* --- Griglia gallery --- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+  </style>
 </head>
 <body>
 
@@ -29,9 +120,8 @@
     <h2>📷 Galleria Nippon Wings</h2>
 
     <p>
-      Una selezione di immagini dedicate al <strong>Passero del Giappone Nero Grigio</strong>,
-      all’ambiente di allevamento e ai nidi utilizzati. Le serie fotografiche mostrano soggetti in selezione,
-      condizioni di gestione e dettagli tecnici dell’allevamento.
+      Serie fotografiche dedicate al <strong>Passero del Giappone Nero Grigio</strong>
+      e alla struttura tecnica dell’allevamento.
     </p>
 
     <!-- ===================================================== -->
@@ -41,177 +131,193 @@
     <div class="gallery-grid">
 
       <!-- BOX 1 -->
-      <div class="gallery-item gallery-multi">
-        <h3>Maschi Nero Grigio – Serie Fotografica</h3>
-        <div class="multi-photo-box">
-          <img src="img/foto-01.jpg" alt="Foto 1">
-          <img src="img/foto-02.jpg" alt="Foto 2">
-          <img src="img/foto-03.jpg" alt="Foto 3">
-          <img src="img/foto-04.jpg" alt="Foto 4">
-          <img src="img/foto-05.jpg" alt="Foto 5">
-          <img src="img/foto-06.jpg" alt="Foto 6">
+      <div class="slider-box">
+        <div class="slider-container" data-slider="1">
+          <div class="slide active"><img src="img/foto-01.jpg"></div>
+          <div class="slide"><img src="img/foto-02.jpg"></div>
+          <div class="slide"><img src="img/foto-03.jpg"></div>
+          <div class="slide"><img src="img/foto-04.jpg"></div>
+          <div class="slide"><img src="img/foto-05.jpg"></div>
+          <div class="slide"><img src="img/foto-06.jpg"></div>
+
+          <div class="slider-arrow left" onclick="prevSlide(1)">&#10094;</div>
+          <div class="slider-arrow right" onclick="nextSlide(1)">&#10095;</div>
         </div>
+        <h3>Maschi Nero Grigio – Serie Fotografica</h3>
         <p>
-          Serie dedicata ai maschi Nero Grigio selezionati per compattezza, definizione della mascherina
-          e portamento in gabbia da esposizione.
+          Linea selezionata per definizione del mantello, mascherina scura e portamento corretto.
         </p>
       </div>
 
       <!-- BOX 2 -->
-      <div class="gallery-item gallery-multi">
-        <h3>Coppie in riproduzione – Serie Fotografica</h3>
-        <div class="multi-photo-box">
-          <img src="img2789.jpg" alt="Foto 1">
-          <img src="img2790.jpg" alt="Foto 2">
-          <img src="img2791.jpg" alt="Foto 3">
-          <img src="img2792.jpg" alt="Foto 4">
-          <img src="img2798.jpg" alt="Foto 5">
-          <img src="img2800.jpg" alt="Foto 6">
+      <div class="slider-box">
+        <div class="slider-container" data-slider="2">
+          <div class="slide active"><img src="img/foto-07.jpg"></div>
+          <div class="slide"><img src="img/foto-08.jpg"></div>
+          <div class="slide"><img src="img/foto-09.jpg"></div>
+          <div class="slide"><img src="img/foto-10.jpg"></div>
+          <div class="slide"><img src="img/foto-11.jpg"></div>
+          <div class="slide"><img src="img/foto-12.jpg"></div>
+
+          <div class="slider-arrow left" onclick="prevSlide(2)">&#10094;</div>
+          <div class="slider-arrow right" onclick="nextSlide(2)">&#10095;</div>
         </div>
+        <h3>Coppie in riproduzione – Serie Fotografica</h3>
         <p>
-          Scatti dedicati alle coppie impostate per la riproduzione, con attenzione alla costanza
-          riproduttiva e alla qualità dei novelli generati.
+          Osservazioni dedicate alla costanza riproduttiva e alla qualità dei novelli.
         </p>
       </div>
 
       <!-- BOX 3 -->
-      <div class="gallery-item gallery-multi">
-        <h3>Novelli e giovani in muta – Serie Fotografica</h3>
-        <div class="multi-photo-box">
-          <img src="img/foto-13.jpg" alt="Foto 1">
-          <img src="img/foto-14.jpg" alt="Foto 2">
-          <img src="img/foto-15.jpg" alt="Foto 3">
-          <img src="img/foto-16.jpg" alt="Foto 4">
-          <img src="img/foto-17.jpg" alt="Foto 5">
-          <img src="img/foto-18.jpg" alt="Foto 6">
+      <div class="slider-box">
+        <div class="slider-container" data-slider="3">
+          <div class="slide active"><img src="img/foto-13.jpg"></div>
+          <div class="slide"><img src="img/foto-14.jpg"></div>
+          <div class="slide"><img src="img/foto-15.jpg"></div>
+          <div class="slide"><img src="img/foto-16.jpg"></div>
+          <div class="slide"><img src="img/foto-17.jpg"></div>
+          <div class="slide"><img src="img/foto-18.jpg"></div>
+
+          <div class="slider-arrow left" onclick="prevSlide(3)">&#10094;</div>
+          <div class="slider-arrow right" onclick="nextSlide(3)">&#10095;</div>
         </div>
+        <h3>Novelli e giovani in muta – Serie Fotografica</h3>
         <p>
-          Documentazione della fase di muta, utile per valutare uniformità di linea, intensità del mantello
-          e stabilità genetica nelle generazioni successive.
+          Valutazione della stabilità cromatica e della uniformità di linea nei novelli.
         </p>
       </div>
+
     </div>
 
     <!-- ===================================================== -->
-    <!-- NIDI E TECNOLOGIA -->
+    <!-- Nidi e tecnologia -->
     <!-- ===================================================== -->
     <h3 style="margin-top:24px;">Nidi e tecnologia in allevamento</h3>
     <div class="gallery-grid">
 
       <!-- BOX 4 -->
-      <div class="gallery-item gallery-multi">
-        <h3>Nido Smart 2.0 – Serie Tecnica</h3>
-        <div class="multi-photo-box">
-          <img src="img/foto-19.jpg" alt="Foto 1">
-          <img src="img/foto-20.jpg" alt="Foto 2">
-          <img src="img/foto-21.jpg" alt="Foto 3">
-          <img src="img/foto-22.jpg" alt="Foto 4">
-          <img src="img/foto-23.jpg" alt="Foto 5">
-          <img src="img/foto-24.jpg" alt="Foto 6">
+      <div class="slider-box">
+        <div class="slider-container" data-slider="4">
+          <div class="slide active"><img src="img/foto-19.jpg"></div>
+          <div class="slide"><img src="img/foto-20.jpg"></div>
+          <div class="slide"><img src="img/foto-21.jpg"></div>
+          <div class="slide"><img src="img/foto-22.jpg"></div>
+          <div class="slide"><img src="img/foto-23.jpg"></div>
+          <div class="slide"><img src="img/foto-24.jpg"></div>
+
+          <div class="slider-arrow left" onclick="prevSlide(4)">&#10094;</div>
+          <div class="slider-arrow right" onclick="nextSlide(4)">&#10095;</div>
         </div>
+        <h3>Nido Smart 2.0 – Serie Tecnica</h3>
         <p>
-          Dettagli del Nido Smart 2.0 con alloggiamento videocamera IR, sezioni interne ottimizzate
-          e gestione controllata di temperatura e umidità.
+          Documentazione della struttura del nido con telecamera IR e gestione termoigrometrica.
         </p>
       </div>
 
       <!-- BOX 5 -->
-      <div class="gallery-item gallery-multi">
-        <h3>Interni dei nidi – Serie Documentativa</h3>
-        <div class="multi-photo-box">
-          <img src="img/foto-25.jpg" alt="Foto 1">
-          <img src="img/foto-26.jpg" alt="Foto 2">
-          <img src="img/foto-27.jpg" alt="Foto 3">
-          <img src="img/foto-28.jpg" alt="Foto 4">
-          <img src="img/foto-29.jpg" alt="Foto 5">
-          <img src="img/foto-30.jpg" alt="Foto 6">
+      <div class="slider-box">
+        <div class="slider-container" data-slider="5">
+          <div class="slide active"><img src="img/foto-25.jpg"></div>
+          <div class="slide"><img src="img/foto-26.jpg"></div>
+          <div class="slide"><img src="img/foto-27.jpg"></div>
+          <div class="slide"><img src="img/foto-28.jpg"></div>
+          <div class="slide"><img src="img/foto-29.jpg"></div>
+          <div class="slide"><img src="img/foto-30.jpg"></div>
+
+          <div class="slider-arrow left" onclick="prevSlide(5)">&#10094;</div>
+          <div class="slider-arrow right" onclick="nextSlide(5)">&#10095;</div>
         </div>
+        <h3>Interni dei nidi – Serie Documentativa</h3>
         <p>
-          Serie che mostra l’interno dei nidi durante l’uso, conservando condizioni igieniche ottimali
-          e benessere per le coppie riproduttrici.
+          Serie che mostra l’allestimento interno dei nidi e la loro funzionalità reale.
         </p>
       </div>
 
       <!-- BOX 6 -->
-      <div class="gallery-item gallery-multi">
-        <h3>Monitoraggio ambientale – Serie Tecnica</h3>
-        <div class="multi-photo-box">
-          <img src="img/foto-31.jpg" alt="Foto 1">
-          <img src="img/foto-32.jpg" alt="Foto 2">
-          <img src="img/foto-33.jpg" alt="Foto 3">
-          <img src="img/foto-34.jpg" alt="Foto 4">
-          <img src="img/foto-35.jpg" alt="Foto 5">
-          <img src="img/foto-36.jpg" alt="Foto 6">
+      <div class="slider-box">
+        <div class="slider-container" data-slider="6">
+          <div class="slide active"><img src="img/foto-31.jpg"></div>
+          <div class="slide"><img src="img/foto-32.jpg"></div>
+          <div class="slide"><img src="img/foto-33.jpg"></div>
+          <div class="slide"><img src="img/foto-34.jpg"></div>
+          <div class="slide"><img src="img/foto-35.jpg"></div>
+          <div class="slide"><img src="img/foto-36.jpg"></div>
+
+          <div class="slider-arrow left" onclick="prevSlide(6)">&#10094;</div>
+          <div class="slider-arrow right" onclick="nextSlide(6)">&#10095;</div>
         </div>
+        <h3>Monitoraggio ambientale – Serie Tecnica</h3>
         <p>
-          Fotografie del sistema di monitoraggio termo-igrometrico, utile per mantenere stabilità
-          nei momenti critici della riproduzione.
+          Monitoraggi termo–igrometrici nelle fasi critiche della riproduzione.
         </p>
       </div>
+
     </div>
 
     <!-- ===================================================== -->
-    <!-- AMBIENTE DI ALLEVAMENTO -->
+    <!-- Ambiente di allevamento -->
     <!-- ===================================================== -->
     <h3 style="margin-top:24px;">Ambiente di allevamento</h3>
     <div class="gallery-grid">
 
       <!-- BOX 7 -->
-      <div class="gallery-item gallery-multi">
-        <h3>Struttura delle gabbie – Serie Fotografica</h3>
-        <div class="multi-photo-box">
-          <img src="img/foto-37.jpg" alt="Foto 1">
-          <img src="img/foto-38.jpg" alt="Foto 2">
-          <img src="img/foto-39.jpg" alt="Foto 3">
-          <img src="img/foto-40.jpg" alt="Foto 4">
-          <img src="img/foto-41.jpg" alt="Foto 5">
-          <img src="img/foto-42.jpg" alt="Foto 6">
+      <div class="slider-box">
+        <div class="slider-container" data-slider="7">
+          <div class="slide active"><img src="img/foto-37.jpg"></div>
+          <div class="slide"><img src="img/foto-38.jpg"></div>
+          <div class="slide"><img src="img/foto-39.jpg"></div>
+          <div class="slide"><img src="img/foto-40.jpg"></div>
+          <div class="slide"><img src="img/foto-41.jpg"></div>
+          <div class="slide"><img src="img/foto-42.jpg"></div>
+
+          <div class="slider-arrow left" onclick="prevSlide(7)">&#10094;</div>
+          <div class="slider-arrow right" onclick="nextSlide(7)">&#10095;</div>
         </div>
+        <h3>Struttura delle gabbie – Serie Fotografica</h3>
         <p>
-          Dettagli della batteria di gabbie da cova, progettata per ordine, praticità e facilità di gestione
-          quotidiana dell’allevamento.
+          Dettagli tecnici della batteria di gabbie Nippon Wings.
         </p>
       </div>
 
       <!-- BOX 8 -->
-      <div class="gallery-item gallery-multi">
-        <h3>Allestimento gabbie – Serie Tecnica</h3>
-        <div class="multi-photo-box">
-          <img src="img/foto-43.jpg" alt="Foto 1">
-          <img src="img/foto-44.jpg" alt="Foto 2">
-          <img src="img/foto-45.jpg" alt="Foto 3">
-          <img src="img/foto-46.jpg" alt="Foto 4">
-          <img src="img/foto-47.jpg" alt="Foto 5">
-          <img src="img/foto-48.jpg" alt="Foto 6">
+      <div class="slider-box">
+        <div class="slider-container" data-slider="8">
+          <div class="slide active"><img src="img/foto-43.jpg"></div>
+          <div class="slide"><img src="img/foto-44.jpg"></div>
+          <div class="slide"><img src="img/foto-45.jpg"></div>
+          <div class="slide"><img src="img/foto-46.jpg"></div>
+          <div class="slide"><img src="img/foto-47.jpg"></div>
+          <div class="slide"><img src="img/foto-48.jpg"></div>
+
+          <div class="slider-arrow left" onclick="prevSlide(8)">&#10094;</div>
+          <div class="slider-arrow right" onclick="nextSlide(8)">&#10095;</div>
         </div>
+        <h3>Allestimento gabbie – Serie Tecnica</h3>
         <p>
-          Esempi di gabbie predisposte per la riproduzione, con posatoi, mangiatoie e nidi
-          disposti per garantire comfort e funzionalità.
+          Studio della disposizione di posatoi, mangiatoie e nidi.
         </p>
       </div>
 
       <!-- BOX 9 -->
-      <div class="gallery-item gallery-multi">
-        <h3>Panoramiche dell’allevamento – Serie Ambientale</h3>
-        <div class="multi-photo-box">
-          <img src="img/foto-49.jpg" alt="Foto 1">
-          <img src="img/foto-50.jpg" alt="Foto 2">
-          <img src="img/foto-51.jpg" alt="Foto 3">
-          <img src="img/foto-52.jpg" alt="Foto 4">
-          <img src="img/foto-53.jpg" alt="Foto 5">
-          <img src="img/foto-54.jpg" alt="Foto 6">
+      <div class="slider-box">
+        <div class="slider-container" data-slider="9">
+          <div class="slide active"><img src="img/foto-49.jpg"></div>
+          <div class="slide"><img src="img/foto-50.jpg"></div>
+          <div class="slide"><img src="img/foto-51.jpg"></div>
+          <div class="slide"><img src="img/foto-52.jpg"></div>
+          <div class="slide"><img src="img/foto-53.jpg"></div>
+          <div class="slide"><img src="img/foto-54.jpg"></div>
+
+          <div class="slider-arrow left" onclick="prevSlide(9)">&#10094;</div>
+          <div class="slider-arrow right" onclick="nextSlide(9)">&#10095;</div>
         </div>
+        <h3>Panoramiche dell’allevamento – Serie Ambientale</h3>
         <p>
-          Panoramiche della sala allevamento Nippon Wings, con impostazione pulita e razionale
-          studiata per la selezione tecnica del Nero Grigio.
+          Visione d’insieme dello spazio dedicato alla selezione Nippon Wings.
         </p>
       </div>
 
     </div>
-
-    <p class="nota-galleria">
-      Le serie fotografiche sono aggiornate periodicamente per documentare l’evoluzione dell’allevamento.
-    </p>
 
   </section>
 </div>
@@ -219,6 +325,31 @@
 <footer>
   © 2025 · Nippon Wings · Allevamento Amatoriale Passero del Giappone Nero Grigio
 </footer>
+
+<!-- ========================================================= -->
+<!-- JS SLIDER SEMPLICISSIMO -->
+<!-- ========================================================= -->
+<script>
+  function nextSlide(id) {
+    const slider = document.querySelector(`.slider-container[data-slider="${id}"]`);
+    const slides = slider.querySelectorAll('.slide');
+    let active = [...slides].findIndex(s => s.classList.contains('active'));
+
+    slides[active].classList.remove('active');
+    active = (active + 1) % slides.length;
+    slides[active].classList.add('active');
+  }
+
+  function prevSlide(id) {
+    const slider = document.querySelector(`.slider-container[data-slider="${id}"]`);
+    const slides = slider.querySelectorAll('.slide');
+    let active = [...slides].findIndex(s => s.classList.contains('active'));
+
+    slides[active].classList.remove('active');
+    active = (active - 1 + slides.length) % slides.length;
+    slides[active].classList.add('active');
+  }
+</script>
 
 </body>
 </html>
