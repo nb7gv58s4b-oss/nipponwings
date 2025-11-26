@@ -487,3 +487,24 @@ section:hover {
 #backToTop:active {
   transform: translateY(0);
 }
+
+.gallery-multi {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+}
+
+.multi-photo-box {
+  margin: 12px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.multi-photo-box img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+}
